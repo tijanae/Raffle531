@@ -1,0 +1,765 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E3EE5B32662A396003E9C99 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5B22662A396003E9C99 /* NetworkHelper.swift */; };
+		4E3EE5CD266329C0003E9C99 /* RaffleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5CC266329C0003E9C99 /* RaffleDetailVC.swift */; };
+		4E3EE5D526632A30003E9C99 /* RaffleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5D426632A30003E9C99 /* RaffleDetailView.swift */; };
+		4E3EE5DA26632E55003E9C99 /* NewRaffleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5D926632E55003E9C99 /* NewRaffleVC.swift */; };
+		4E3EE5DF26632F85003E9C99 /* RaffleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5DE26632F85003E9C99 /* RaffleTextField.swift */; };
+		4E3EE5E426633036003E9C99 /* NewRaffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5E326633036003E9C99 /* NewRaffleView.swift */; };
+		4E3EE5EC26633F2D003E9C99 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5EB26633F2D003E9C99 /* RegisterVC.swift */; };
+		4E3EE5F126633F83003E9C99 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5F026633F83003E9C99 /* RegisterView.swift */; };
+		4E3EE5FC2663DA2B003E9C99 /* ParticipantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE5FB2663DA2B003E9C99 /* ParticipantVC.swift */; };
+		4E3EE6012663DA87003E9C99 /* ParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6002663DA87003E9C99 /* ParticipantView.swift */; };
+		4E3EE6062663DB21003E9C99 /* participantTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6052663DB21003E9C99 /* participantTVC.swift */; };
+		4E3EE60E2663E450003E9C99 /* Participants.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E3EE60D2663E450003E9C99 /* Participants.json */; };
+		4E3EE6162663E469003E9C99 /* ParticipantsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6152663E469003E9C99 /* ParticipantsModel.swift */; };
+		4E3EE6212663F511003E9C99 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6202663F511003E9C99 /* WinnerView.swift */; };
+		4E3EE6262663F6FD003E9C99 /* WinnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6252663F6FD003E9C99 /* WinnerVC.swift */; };
+		4E3EE62E2663F91A003E9C99 /* WatchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE62D2663F91A003E9C99 /* WatchListVC.swift */; };
+		4E3EE6332663F932003E9C99 /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6322663F932003E9C99 /* WatchListView.swift */; };
+		4E3EE6392663FF55003E9C99 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6382663FF55003E9C99 /* PersistenceHelper.swift */; };
+		4E3EE6412663FFA9003E9C99 /* WatchListHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE6402663FFA9003E9C99 /* WatchListHelper.swift */; };
+		4E3EE64C26640006003E9C99 /* WatchListPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE64B26640006003E9C99 /* WatchListPersisted.swift */; };
+		4E3EE66B2664332F003E9C99 /* RaffleApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE66A2664332F003E9C99 /* RaffleApiHelper.swift */; };
+		4E3EE68026644A59003E9C99 /* ParticipantsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE67F26644A59003E9C99 /* ParticipantsWrapper.swift */; };
+		4E3EE68526644F66003E9C99 /* RaffleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE68426644F66003E9C99 /* RaffleModel.swift */; };
+		4E3EE68D266451E2003E9C99 /* RaffleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */; };
+		4EF8AA6826627F770068FFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA6726627F770068FFCC /* AppDelegate.swift */; };
+		4EF8AA6A26627F770068FFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA6926627F770068FFCC /* SceneDelegate.swift */; };
+		4EF8AA6C26627F770068FFCC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA6B26627F770068FFCC /* TabBar.swift */; };
+		4EF8AA7126627F7B0068FFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8AA7026627F7B0068FFCC /* Assets.xcassets */; };
+		4EF8AA7F26627F7C0068FFCC /* RaffleProjTiaLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA7E26627F7C0068FFCC /* RaffleProjTiaLTests.swift */; };
+		4EF8AA8A26627F7C0068FFCC /* RaffleProjTiaLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA8926627F7C0068FFCC /* RaffleProjTiaLUITests.swift */; };
+		4EF8AAAC266282CF0068FFCC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AAAB266282CF0068FFCC /* LoginVC.swift */; };
+		4EF8AAB4266283070068FFCC /* RaffleHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AAB3266283070068FFCC /* RaffleHomeVC.swift */; };
+		4EF8AAB9266285B10068FFCC /* AllRaffle.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EF8AAB8266285B10068FFCC /* AllRaffle.json */; };
+		4EF8AABE2662864C0068FFCC /* AllRaffleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AABD2662864C0068FFCC /* AllRaffleModel.swift */; };
+		4EF8AAC326628C580068FFCC /* RaffleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AAC226628C580068FFCC /* RaffleView.swift */; };
+		4EF8AAC826628D670068FFCC /* RaffleCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AAC726628D670068FFCC /* RaffleCVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4EF8AA7B26627F7C0068FFCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF8AA5C26627F770068FFCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EF8AA6326627F770068FFCC;
+			remoteInfo = RaffleProjTiaL;
+		};
+		4EF8AA8626627F7C0068FFCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF8AA5C26627F770068FFCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EF8AA6326627F770068FFCC;
+			remoteInfo = RaffleProjTiaL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E3EE5B22662A396003E9C99 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		4E3EE5CC266329C0003E9C99 /* RaffleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleDetailVC.swift; sourceTree = "<group>"; };
+		4E3EE5D426632A30003E9C99 /* RaffleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleDetailView.swift; sourceTree = "<group>"; };
+		4E3EE5D926632E55003E9C99 /* NewRaffleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRaffleVC.swift; sourceTree = "<group>"; };
+		4E3EE5DE26632F85003E9C99 /* RaffleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleTextField.swift; sourceTree = "<group>"; };
+		4E3EE5E326633036003E9C99 /* NewRaffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRaffleView.swift; sourceTree = "<group>"; };
+		4E3EE5EB26633F2D003E9C99 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		4E3EE5F026633F83003E9C99 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		4E3EE5FB2663DA2B003E9C99 /* ParticipantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantVC.swift; sourceTree = "<group>"; };
+		4E3EE6002663DA87003E9C99 /* ParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantView.swift; sourceTree = "<group>"; };
+		4E3EE6052663DB21003E9C99 /* participantTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = participantTVC.swift; sourceTree = "<group>"; };
+		4E3EE60D2663E450003E9C99 /* Participants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Participants.json; sourceTree = "<group>"; };
+		4E3EE6152663E469003E9C99 /* ParticipantsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsModel.swift; sourceTree = "<group>"; };
+		4E3EE6202663F511003E9C99 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
+		4E3EE6252663F6FD003E9C99 /* WinnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerVC.swift; sourceTree = "<group>"; };
+		4E3EE62D2663F91A003E9C99 /* WatchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListVC.swift; sourceTree = "<group>"; };
+		4E3EE6322663F932003E9C99 /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
+		4E3EE6382663FF55003E9C99 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
+		4E3EE6402663FFA9003E9C99 /* WatchListHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListHelper.swift; sourceTree = "<group>"; };
+		4E3EE64B26640006003E9C99 /* WatchListPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListPersisted.swift; sourceTree = "<group>"; };
+		4E3EE66A2664332F003E9C99 /* RaffleApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleApiHelper.swift; sourceTree = "<group>"; };
+		4E3EE67F26644A59003E9C99 /* ParticipantsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsWrapper.swift; sourceTree = "<group>"; };
+		4E3EE68426644F66003E9C99 /* RaffleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleModel.swift; sourceTree = "<group>"; };
+		4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleWrapper.swift; sourceTree = "<group>"; };
+		4EF8AA6426627F770068FFCC /* RaffleProjTiaL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaffleProjTiaL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EF8AA6726627F770068FFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4EF8AA6926627F770068FFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4EF8AA6B26627F770068FFCC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		4EF8AA7026627F7B0068FFCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EF8AA7526627F7B0068FFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF8AA7A26627F7C0068FFCC /* RaffleProjTiaLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaffleProjTiaLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EF8AA7E26627F7C0068FFCC /* RaffleProjTiaLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleProjTiaLTests.swift; sourceTree = "<group>"; };
+		4EF8AA8026627F7C0068FFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF8AA8526627F7C0068FFCC /* RaffleProjTiaLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaffleProjTiaLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EF8AA8926627F7C0068FFCC /* RaffleProjTiaLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleProjTiaLUITests.swift; sourceTree = "<group>"; };
+		4EF8AA8B26627F7C0068FFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF8AAAB266282CF0068FFCC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		4EF8AAB3266283070068FFCC /* RaffleHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleHomeVC.swift; sourceTree = "<group>"; };
+		4EF8AAB8266285B10068FFCC /* AllRaffle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AllRaffle.json; sourceTree = "<group>"; };
+		4EF8AABD2662864C0068FFCC /* AllRaffleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRaffleModel.swift; sourceTree = "<group>"; };
+		4EF8AAC226628C580068FFCC /* RaffleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleView.swift; sourceTree = "<group>"; };
+		4EF8AAC726628D670068FFCC /* RaffleCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleCVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EF8AA6126627F770068FFCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EF8AA7726627F7C0068FFCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EF8AA8226627F7C0068FFCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E3EE5CB26632978003E9C99 /* RaffleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4E3EE5CC266329C0003E9C99 /* RaffleDetailVC.swift */,
+				4E3EE5D426632A30003E9C99 /* RaffleDetailView.swift */,
+				4E3EE5EB26633F2D003E9C99 /* RegisterVC.swift */,
+				4E3EE5F026633F83003E9C99 /* RegisterView.swift */,
+				4E3EE5FB2663DA2B003E9C99 /* ParticipantVC.swift */,
+				4E3EE6002663DA87003E9C99 /* ParticipantView.swift */,
+				4E3EE6052663DB21003E9C99 /* participantTVC.swift */,
+				4E3EE6202663F511003E9C99 /* WinnerView.swift */,
+				4E3EE6252663F6FD003E9C99 /* WinnerVC.swift */,
+			);
+			path = RaffleDetail;
+			sourceTree = "<group>";
+		};
+		4E3EE6372663FF32003E9C99 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4E3EE6382663FF55003E9C99 /* PersistenceHelper.swift */,
+				4E3EE6402663FFA9003E9C99 /* WatchListHelper.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		4EF8AA5B26627F770068FFCC = {
+			isa = PBXGroup;
+			children = (
+				4EF8AA6626627F770068FFCC /* RaffleProjTiaL */,
+				4EF8AA7D26627F7C0068FFCC /* RaffleProjTiaLTests */,
+				4EF8AA8826627F7C0068FFCC /* RaffleProjTiaLUITests */,
+				4EF8AA6526627F770068FFCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4EF8AA6526627F770068FFCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AA6426627F770068FFCC /* RaffleProjTiaL.app */,
+				4EF8AA7A26627F7C0068FFCC /* RaffleProjTiaLTests.xctest */,
+				4EF8AA8526627F7C0068FFCC /* RaffleProjTiaLUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EF8AA6626627F770068FFCC /* RaffleProjTiaL */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AAA1266280480068FFCC /* Controllers */,
+				4EF8AAA22662808C0068FFCC /* Extensions */,
+				4EF8AAA3266280B50068FFCC /* JSON */,
+				4EF8AAA4266280CC0068FFCC /* Models */,
+				4EF8AAA5266280EA0068FFCC /* NetworkHelper */,
+				4E3EE6372663FF32003E9C99 /* Persistence */,
+				4EF8AAA0266280290068FFCC /* SupportingFiles */,
+				4EF8AA7526627F7B0068FFCC /* Info.plist */,
+			);
+			path = RaffleProjTiaL;
+			sourceTree = "<group>";
+		};
+		4EF8AA7D26627F7C0068FFCC /* RaffleProjTiaLTests */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AA7E26627F7C0068FFCC /* RaffleProjTiaLTests.swift */,
+				4EF8AA8026627F7C0068FFCC /* Info.plist */,
+			);
+			path = RaffleProjTiaLTests;
+			sourceTree = "<group>";
+		};
+		4EF8AA8826627F7C0068FFCC /* RaffleProjTiaLUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AA8926627F7C0068FFCC /* RaffleProjTiaLUITests.swift */,
+				4EF8AA8B26627F7C0068FFCC /* Info.plist */,
+			);
+			path = RaffleProjTiaLUITests;
+			sourceTree = "<group>";
+		};
+		4EF8AAA0266280290068FFCC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AA6726627F770068FFCC /* AppDelegate.swift */,
+				4EF8AA6926627F770068FFCC /* SceneDelegate.swift */,
+				4EF8AA7026627F7B0068FFCC /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4EF8AAA1266280480068FFCC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AA6B26627F770068FFCC /* TabBar.swift */,
+				4EF8AAA6266281190068FFCC /* Authentication */,
+				4EF8AAAA266282760068FFCC /* RaffleMain */,
+				4E3EE5CB26632978003E9C99 /* RaffleDetail */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4EF8AAA22662808C0068FFCC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E3EE5DE26632F85003E9C99 /* RaffleTextField.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4EF8AAA3266280B50068FFCC /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AAB8266285B10068FFCC /* AllRaffle.json */,
+				4E3EE60D2663E450003E9C99 /* Participants.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		4EF8AAA4266280CC0068FFCC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AABD2662864C0068FFCC /* AllRaffleModel.swift */,
+				4E3EE6152663E469003E9C99 /* ParticipantsModel.swift */,
+				4E3EE64B26640006003E9C99 /* WatchListPersisted.swift */,
+				4E3EE67F26644A59003E9C99 /* ParticipantsWrapper.swift */,
+				4E3EE68426644F66003E9C99 /* RaffleModel.swift */,
+				4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4EF8AAA5266280EA0068FFCC /* NetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4E3EE5B22662A396003E9C99 /* NetworkHelper.swift */,
+				4E3EE66A2664332F003E9C99 /* RaffleApiHelper.swift */,
+			);
+			path = NetworkHelper;
+			sourceTree = "<group>";
+		};
+		4EF8AAA6266281190068FFCC /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AAAB266282CF0068FFCC /* LoginVC.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4EF8AAAA266282760068FFCC /* RaffleMain */ = {
+			isa = PBXGroup;
+			children = (
+				4EF8AAB3266283070068FFCC /* RaffleHomeVC.swift */,
+				4EF8AAC226628C580068FFCC /* RaffleView.swift */,
+				4EF8AAC726628D670068FFCC /* RaffleCVC.swift */,
+				4E3EE5D926632E55003E9C99 /* NewRaffleVC.swift */,
+				4E3EE5E326633036003E9C99 /* NewRaffleView.swift */,
+				4E3EE62D2663F91A003E9C99 /* WatchListVC.swift */,
+				4E3EE6322663F932003E9C99 /* WatchListView.swift */,
+			);
+			path = RaffleMain;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EF8AA6326627F770068FFCC /* RaffleProjTiaL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EF8AA8E26627F7C0068FFCC /* Build configuration list for PBXNativeTarget "RaffleProjTiaL" */;
+			buildPhases = (
+				4EF8AA6026627F770068FFCC /* Sources */,
+				4EF8AA6126627F770068FFCC /* Frameworks */,
+				4EF8AA6226627F770068FFCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaffleProjTiaL;
+			productName = RaffleProjTiaL;
+			productReference = 4EF8AA6426627F770068FFCC /* RaffleProjTiaL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4EF8AA7926627F7C0068FFCC /* RaffleProjTiaLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EF8AA9126627F7C0068FFCC /* Build configuration list for PBXNativeTarget "RaffleProjTiaLTests" */;
+			buildPhases = (
+				4EF8AA7626627F7C0068FFCC /* Sources */,
+				4EF8AA7726627F7C0068FFCC /* Frameworks */,
+				4EF8AA7826627F7C0068FFCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EF8AA7C26627F7C0068FFCC /* PBXTargetDependency */,
+			);
+			name = RaffleProjTiaLTests;
+			productName = RaffleProjTiaLTests;
+			productReference = 4EF8AA7A26627F7C0068FFCC /* RaffleProjTiaLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4EF8AA8426627F7C0068FFCC /* RaffleProjTiaLUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EF8AA9426627F7C0068FFCC /* Build configuration list for PBXNativeTarget "RaffleProjTiaLUITests" */;
+			buildPhases = (
+				4EF8AA8126627F7C0068FFCC /* Sources */,
+				4EF8AA8226627F7C0068FFCC /* Frameworks */,
+				4EF8AA8326627F7C0068FFCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EF8AA8726627F7C0068FFCC /* PBXTargetDependency */,
+			);
+			name = RaffleProjTiaLUITests;
+			productName = RaffleProjTiaLUITests;
+			productReference = 4EF8AA8526627F7C0068FFCC /* RaffleProjTiaLUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4EF8AA5C26627F770068FFCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					4EF8AA6326627F770068FFCC = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					4EF8AA7926627F7C0068FFCC = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 4EF8AA6326627F770068FFCC;
+					};
+					4EF8AA8426627F7C0068FFCC = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 4EF8AA6326627F770068FFCC;
+					};
+				};
+			};
+			buildConfigurationList = 4EF8AA5F26627F770068FFCC /* Build configuration list for PBXProject "RaffleProjTiaL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4EF8AA5B26627F770068FFCC;
+			productRefGroup = 4EF8AA6526627F770068FFCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EF8AA6326627F770068FFCC /* RaffleProjTiaL */,
+				4EF8AA7926627F7C0068FFCC /* RaffleProjTiaLTests */,
+				4EF8AA8426627F7C0068FFCC /* RaffleProjTiaLUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EF8AA6226627F770068FFCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF8AA7126627F7B0068FFCC /* Assets.xcassets in Resources */,
+				4EF8AAB9266285B10068FFCC /* AllRaffle.json in Resources */,
+				4E3EE60E2663E450003E9C99 /* Participants.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EF8AA7826627F7C0068FFCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EF8AA8326627F7C0068FFCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EF8AA6026627F770068FFCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF8AA6C26627F770068FFCC /* TabBar.swift in Sources */,
+				4E3EE6212663F511003E9C99 /* WinnerView.swift in Sources */,
+				4E3EE5CD266329C0003E9C99 /* RaffleDetailVC.swift in Sources */,
+				4E3EE5B32662A396003E9C99 /* NetworkHelper.swift in Sources */,
+				4E3EE6332663F932003E9C99 /* WatchListView.swift in Sources */,
+				4E3EE5E426633036003E9C99 /* NewRaffleView.swift in Sources */,
+				4E3EE66B2664332F003E9C99 /* RaffleApiHelper.swift in Sources */,
+				4E3EE5DA26632E55003E9C99 /* NewRaffleVC.swift in Sources */,
+				4E3EE68526644F66003E9C99 /* RaffleModel.swift in Sources */,
+				4EF8AAB4266283070068FFCC /* RaffleHomeVC.swift in Sources */,
+				4E3EE6262663F6FD003E9C99 /* WinnerVC.swift in Sources */,
+				4E3EE6012663DA87003E9C99 /* ParticipantView.swift in Sources */,
+				4E3EE68026644A59003E9C99 /* ParticipantsWrapper.swift in Sources */,
+				4EF8AA6826627F770068FFCC /* AppDelegate.swift in Sources */,
+				4EF8AAAC266282CF0068FFCC /* LoginVC.swift in Sources */,
+				4E3EE62E2663F91A003E9C99 /* WatchListVC.swift in Sources */,
+				4E3EE68D266451E2003E9C99 /* RaffleWrapper.swift in Sources */,
+				4E3EE6412663FFA9003E9C99 /* WatchListHelper.swift in Sources */,
+				4E3EE6392663FF55003E9C99 /* PersistenceHelper.swift in Sources */,
+				4E3EE6062663DB21003E9C99 /* participantTVC.swift in Sources */,
+				4EF8AAC326628C580068FFCC /* RaffleView.swift in Sources */,
+				4E3EE5FC2663DA2B003E9C99 /* ParticipantVC.swift in Sources */,
+				4E3EE5EC26633F2D003E9C99 /* RegisterVC.swift in Sources */,
+				4EF8AA6A26627F770068FFCC /* SceneDelegate.swift in Sources */,
+				4E3EE64C26640006003E9C99 /* WatchListPersisted.swift in Sources */,
+				4E3EE5D526632A30003E9C99 /* RaffleDetailView.swift in Sources */,
+				4E3EE5DF26632F85003E9C99 /* RaffleTextField.swift in Sources */,
+				4E3EE5F126633F83003E9C99 /* RegisterView.swift in Sources */,
+				4E3EE6162663E469003E9C99 /* ParticipantsModel.swift in Sources */,
+				4EF8AAC826628D670068FFCC /* RaffleCVC.swift in Sources */,
+				4EF8AABE2662864C0068FFCC /* AllRaffleModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EF8AA7626627F7C0068FFCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF8AA7F26627F7C0068FFCC /* RaffleProjTiaLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EF8AA8126627F7C0068FFCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EF8AA8A26627F7C0068FFCC /* RaffleProjTiaLUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4EF8AA7C26627F7C0068FFCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EF8AA6326627F770068FFCC /* RaffleProjTiaL */;
+			targetProxy = 4EF8AA7B26627F7C0068FFCC /* PBXContainerItemProxy */;
+		};
+		4EF8AA8726627F7C0068FFCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EF8AA6326627F770068FFCC /* RaffleProjTiaL */;
+			targetProxy = 4EF8AA8626627F7C0068FFCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4EF8AA8C26627F7C0068FFCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4EF8AA8D26627F7C0068FFCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4EF8AA8F26627F7C0068FFCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RaffleProjTiaL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tikiproductions.RaffleProjTiaL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EF8AA9026627F7C0068FFCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RaffleProjTiaL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tikiproductions.RaffleProjTiaL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4EF8AA9226627F7C0068FFCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RaffleProjTiaLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tikiproductions.RaffleProjTiaLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaffleProjTiaL.app/RaffleProjTiaL";
+			};
+			name = Debug;
+		};
+		4EF8AA9326627F7C0068FFCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RaffleProjTiaLTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tikiproductions.RaffleProjTiaLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaffleProjTiaL.app/RaffleProjTiaL";
+			};
+			name = Release;
+		};
+		4EF8AA9526627F7C0068FFCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RaffleProjTiaLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tikiproductions.RaffleProjTiaLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaffleProjTiaL;
+			};
+			name = Debug;
+		};
+		4EF8AA9626627F7C0068FFCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RaffleProjTiaLUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tikiproductions.RaffleProjTiaLUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RaffleProjTiaL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4EF8AA5F26627F770068FFCC /* Build configuration list for PBXProject "RaffleProjTiaL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EF8AA8C26627F7C0068FFCC /* Debug */,
+				4EF8AA8D26627F7C0068FFCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EF8AA8E26627F7C0068FFCC /* Build configuration list for PBXNativeTarget "RaffleProjTiaL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EF8AA8F26627F7C0068FFCC /* Debug */,
+				4EF8AA9026627F7C0068FFCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EF8AA9126627F7C0068FFCC /* Build configuration list for PBXNativeTarget "RaffleProjTiaLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EF8AA9226627F7C0068FFCC /* Debug */,
+				4EF8AA9326627F7C0068FFCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EF8AA9426627F7C0068FFCC /* Build configuration list for PBXNativeTarget "RaffleProjTiaLUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EF8AA9526627F7C0068FFCC /* Debug */,
+				4EF8AA9626627F7C0068FFCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4EF8AA5C26627F770068FFCC /* Project object */;
+}

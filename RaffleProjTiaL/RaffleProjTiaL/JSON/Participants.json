@@ -1,0 +1,38 @@
+[
+    {
+        "id": 24,
+        "raffle_id": 4,
+        "firstname": "Miles",
+        "lastname": "Labadie",
+        "email": "Davion71@hotmail.com@email.com",
+        "phone": null,
+        "registered_at": "2021-05-27T23:09:56.084Z"
+    },
+    {
+        "id": 25,
+        "raffle_id": 4,
+        "firstname": "Annabelle",
+        "lastname": "Rau",
+        "email": "Presley.McClure@hotmail.com@email.com",
+        "phone": null,
+        "registered_at": "2021-05-27T23:09:58.824Z"
+    },
+    {
+        "id": 26,
+        "raffle_id": 4,
+        "firstname": "Addison",
+        "lastname": "Jast",
+        "email": "Frieda_Hahn86@gmail.com@email.com",
+        "phone": null,
+        "registered_at": "2021-05-27T23:09:59.731Z"
+    },
+    {
+        "id": 56,
+        "raffle_id": 4,
+        "firstname": "Jill",
+        "lastname": "Doe",
+        "email": "jilldoe@doe.com",
+        "phone": "+1(123)(098)(5674)",
+        "registered_at": "2021-05-29T02:49:02.727Z"
+    }
+]
