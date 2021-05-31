@@ -22,7 +22,7 @@ class WatchListView: UIView {
     lazy var watchTV: UITableView = {
         let table = UITableView()
         table.backgroundColor = .clear
-        table.register(WatchListTVC.self, forCellReuseIdentifier: "watchListTable")
+        table.register(WatchTVC.self, forCellReuseIdentifier: "watchListTable")
         return table
     }()
     
@@ -41,8 +41,8 @@ class WatchListView: UIView {
         
         faveLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [faveLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
-         faveLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
+        [faveLabel.topAnchor.constraint(equalTo: topAnchor, constant: 75 ),
+         faveLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 100),
          faveLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          //faveLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
@@ -53,7 +53,7 @@ class WatchListView: UIView {
         
         watchTV.translatesAutoresizingMaskIntoConstraints = false
         
-        [watchTV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),
+        [watchTV.topAnchor.constraint(equalTo: topAnchor, constant: 150),
          watchTV.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
          watchTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          watchTV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach{$0.isActive = true}

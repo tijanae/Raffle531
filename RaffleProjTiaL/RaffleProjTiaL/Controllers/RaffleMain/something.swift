@@ -7,11 +7,12 @@
 
 import UIKit
 
-class WatchTVC: UITableViewCell {
+class WatchListTVC: UITableViewCell {
 
     lazy var raffleTitle: UILabel = {
        let label = UILabel()
-        label.font = UIFont(name: "GillSans-UltraBold", size: 15)
+        //label.contentMode = .scaleToFill
+        //label.numberOfLines = 2
         return label
     }()
     
@@ -23,7 +24,8 @@ class WatchTVC: UITableViewCell {
     
     lazy var raffleStatusLabel: UILabel = {
        let label = UILabel()
-
+        //label.contentMode = .scaleToFill
+        //label.numberOfLines = 2
         return label
     }()
     
@@ -34,16 +36,15 @@ class WatchTVC: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        constraints()
-        // Configure the view for the selected state
+        addConstraints()
     }
     
-    private func constraints(){
+    private func addConstraints() {
         raffleTitleConstraint()
         raffleStatusConstraint()
         raffleStatusLabelConstraint()
     }
-
+    
     private func raffleTitleConstraint() {
         
         contentView.addSubview(raffleTitle)
@@ -55,6 +56,7 @@ class WatchTVC: UITableViewCell {
          raffleTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          raffleTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
+
     
     private func raffleStatusConstraint() {
         
@@ -80,4 +82,10 @@ class WatchTVC: UITableViewCell {
          raffleStatusLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
          raffleStatusLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 }

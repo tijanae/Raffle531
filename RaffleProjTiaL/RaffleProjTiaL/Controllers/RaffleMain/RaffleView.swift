@@ -46,7 +46,7 @@ class RaffleView: UIView {
         layout.minimumInteritemSpacing = 5
         //layout.scrollDirection = .horizontal
         let raffleCV = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
-        raffleCV.backgroundColor = .white
+        raffleCV.backgroundColor = .clear
         raffleCV.register(RaffleCVC.self, forCellWithReuseIdentifier: "RaffleCVC")
 
         return raffleCV

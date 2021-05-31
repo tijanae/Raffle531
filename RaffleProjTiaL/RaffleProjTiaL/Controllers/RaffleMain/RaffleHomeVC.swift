@@ -29,7 +29,7 @@ class RaffleHomeVC: UIViewController {
         setUp()
         raffleView.raffleCollection.dataSource = self
         raffleView.raffleCollection.delegate = self
-        view.backgroundColor = .white
+        //view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
     }
@@ -37,10 +37,20 @@ class RaffleHomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         loadData()
         loadView()
+        setGradientBackground(colorBottom: UIColor(red: 8/255, green: 92/255, blue: 0/255, alpha: 1), colorTop: .white)
     }
     
     // MARK: Private Func
     
+    private func setGradientBackground(colorBottom: UIColor, colorTop: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.5)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+        gradientLayer.frame = view.bounds
+       self.view.layer.insertSublayer(gradientLayer, at: 0)
+      }
     
     private func loadData() {
         raffleApiHelper.manager.getRaffleData { (result) in

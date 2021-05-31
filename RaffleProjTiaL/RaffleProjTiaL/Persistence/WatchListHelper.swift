@@ -15,8 +15,8 @@ struct WatchListManager {
     
     private let persistenceHelper = PersistenceHelper<WatchListPersisted>(fileName: "playlistPersisted.plist")
     
-    func saveWatchList(playlistData: WatchListPersisted) throws {
-        try persistenceHelper.save(newElement: playlistData)
+    func saveWatchList(watchlistData: WatchListPersisted) throws {
+        try persistenceHelper.save(newElement: watchlistData)
     }
     
     func getWatchList() throws -> [WatchListPersisted] {

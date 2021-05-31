@@ -69,9 +69,9 @@ class RaffleDetailVC: UIViewController {
     
     @objc func save() {
         let raffle = WatchListPersisted(id: raffleDetails.id, name: raffleDetails.name, created_at: raffleDetails.created_at)
-        //DispatchQueue.global(qos: .utility).async {
-          //  try? Fav
-        //}
+        DispatchQueue.global(qos: .utility).async {
+            try? WatchListManager.manager.saveWatchList(watchlistData: raffle)
+        }
     }
     
     @objc func cancel() {
