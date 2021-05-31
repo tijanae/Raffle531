@@ -14,8 +14,16 @@ class RaffleDetailView: UIView {
     lazy var raffleName: UILabel = {
         let label = UILabel()
         label.text = "Win A PONY"
+        label.font = UIFont(name: "GillSans-UltraBold", size: 30)
         label.textColor = .black
         return label
+    }()
+    
+    lazy var faveRaffle: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.tintColor = .black
+        return button
     }()
     
     lazy var cancelRaffle: UIButton = {
@@ -25,47 +33,46 @@ class RaffleDetailView: UIView {
         return button
     }()
     
-    lazy var registerButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Register", for: .normal)
-        button.tintColor = .black
-        
+    lazy var raffleSegments: UISegmentedControl = {
+        let button = UISegmentedControl(items: ["Register","Participants","Winner"])
+        let xPostion:CGFloat = 10
+        let yPostion:CGFloat = 150
+        let elementWidth:CGFloat = 300
+        let elementHeight:CGFloat = 30
+                
+        button.frame = CGRect(x: xPostion, y: yPostion, width: elementWidth, height: elementHeight)
+        button.selectedSegmentIndex = 1
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.lightGray
         return button
     }()
     
-    lazy var participantsButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Participants", for: .normal)
-        button.tintColor = .black
-        return button
-    }()
     
-    lazy var winnerButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Winner", for: .normal)
-        button.tintColor = .black
-        return button
-    }()
     
     override init(frame: CGRect){
         super.init(frame: frame)
         addConstraints()
+        addSubview(raffleSegments)
+        
         
     }
     //MARK: PrivateFuncs
     
     private func addConstraints() {
+        faveConstraint()
         raffleNameConstraint()
         cancelRaffleConstraint()
-        registerConstraint()
-        participantsConstraint()
-        winnerConstraint()
+        
+    }
+    
+    private func faveConstraint() {
+        addSubview(faveRaffle)
+        
+        faveRaffle.translatesAutoresizingMaskIntoConstraints = false
+        
+        [faveRaffle.topAnchor.constraint(equalTo: topAnchor, constant: 85),
+         faveRaffle.bottomAnchor.constraint(equalTo: topAnchor, constant: 115),
+         faveRaffle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)].forEach {$0.isActive = true}
     }
     
     private func raffleNameConstraint() {
@@ -75,7 +82,7 @@ class RaffleDetailView: UIView {
         
         [raffleName.topAnchor.constraint(equalTo: topAnchor, constant: 50),
          raffleName.bottomAnchor.constraint(equalTo: topAnchor, constant: 150),
-         raffleName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)].forEach {$0.isActive = true}
+         raffleName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45)].forEach {$0.isActive = true}
     }
     
     private func cancelRaffleConstraint() {
@@ -87,38 +94,7 @@ class RaffleDetailView: UIView {
          cancelRaffle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25)].forEach {$0.isActive = true}
     }
     
-    private func registerConstraint() {
-        addSubview(registerButton)
-        
-        registerButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        [registerButton.topAnchor.constraint(equalTo: topAnchor, constant: 250),
-         registerButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 300),
-         registerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-         registerButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 125)].forEach {$0.isActive = true}
-    }
     
-    private func participantsConstraint() {
-        addSubview(participantsButton)
-        
-        participantsButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        [participantsButton.topAnchor.constraint(equalTo: topAnchor, constant: 250),
-         participantsButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 300),
-         participantsButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 145),
-         participantsButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 245)].forEach {$0.isActive = true}
-    }
-    
-    private func winnerConstraint() {
-        addSubview(winnerButton)
-        
-        winnerButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        [winnerButton.topAnchor.constraint(equalTo: topAnchor, constant: 250),
-         winnerButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 300),
-         winnerButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 285),
-         winnerButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 385)].forEach {$0.isActive = true}
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

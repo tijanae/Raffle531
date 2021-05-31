@@ -19,6 +19,7 @@ class RaffleHomeVC: UIViewController {
     private let raffleView = RaffleView()
     
     override func loadView() {
+        loadData()
         view = raffleView
     }
 
@@ -33,6 +34,11 @@ class RaffleHomeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+        loadView()
+    }
+    
     // MARK: Private Func
     
     
@@ -43,15 +49,14 @@ class RaffleHomeVC: UIViewController {
                 print(error)
             case .success(let data):
                 self.raffleData = data
-                self.raffleData = self.raffleData.sorted{$0.created_at > $1.created_at}
+                
             }
         }
-        
-        
     }
     
     private func setUp() {
         raffleView.createRaffle.addTarget(self, action: #selector(createRaffle), for: .touchUpInside)
+        raffleView.filterSegment.addTarget(self, action: #selector(filter), for: .valueChanged)
     }
     
     private func sortRaffle() {
@@ -66,7 +71,16 @@ class RaffleHomeVC: UIViewController {
         present(newRaffle, animated: true, completion: nil)
     }
  
-    
+    @objc func filter(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            self.raffleData = self.raffleData.sorted{$0.created_at < $1.created_at}
+            raffleView.raffleCollection.reloadData()
+        default:
+            self.raffleData = self.raffleData.sorted{$0.created_at > $1.created_at}
+            raffleView.raffleCollection.reloadData()
+        }
+    }
 
     
 

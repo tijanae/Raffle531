@@ -30,6 +30,7 @@ class NewRaffleVC: UIViewController {
     private func setUp() {
         newRaffleView.cancelRaffle.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         newRaffleView.submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
+        newRaffleView.textSecureButton.addTarget(self, action: #selector(viewPassword), for: .touchUpInside)
     }
     
     @objc func cancel() {
@@ -39,7 +40,6 @@ class NewRaffleVC: UIViewController {
     @objc func submit() {
         guard let newRaffle = createProjectFromFields() else {displayInvalidProjectAlert()
             return
-            
         }
         raffleApiHelper.manager.postRaffle(newRaffle) { [weak self] result in
             switch result {
@@ -51,6 +51,17 @@ class NewRaffleVC: UIViewController {
             }
         }
         //dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func viewPassword() {
+        if newRaffleView.secrectTokenTF.isSecureTextEntry == true {
+            newRaffleView.secrectTokenTF.isSecureTextEntry = false
+            newRaffleView.textSecureButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        } else {
+            newRaffleView.secrectTokenTF.isSecureTextEntry = true
+            newRaffleView.textSecureButton.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        }
+    
     }
     
     private func createProjectFromFields() -> Raffle? {

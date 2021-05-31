@@ -43,8 +43,7 @@ class RaffleTextField: UITextField {
         }
     
     private func configure() {
-        backgroundColor = .blue
-//        backgroundColor = CrayonBox.White.opaque
+        backgroundColor = .black
         borderStyle = .line
         textColor = .white
         layer.borderWidth = 2

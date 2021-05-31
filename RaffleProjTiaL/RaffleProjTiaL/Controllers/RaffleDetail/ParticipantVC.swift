@@ -9,6 +9,9 @@ import UIKit
 
 class ParticipantVC: UIViewController {
     
+    private let participantView = ParticipantView()
+    private let noParticipantView = noParticipantsView()
+    
     //MARK: DATA
     var participants = [Participants]() {
         didSet {
@@ -16,10 +19,11 @@ class ParticipantVC: UIViewController {
         }
     }
     var raffleDetails: AllRaffles!
-    
-    private let participantView = ParticipantView()
+
     
     override func loadView() {
+        loadData()
+        guard participants.count != 0 else {return view = noParticipantView}
         view = participantView
     }
 
@@ -28,8 +32,8 @@ class ParticipantVC: UIViewController {
         participantView.participantTV.dataSource = self
         participantView.participantTV.delegate = self
         loadData()
-        setUp()
         view.backgroundColor = .darkGray
+        print(raffleDetails.id)
 
         // Do any additional setup after loading the view.
     }
@@ -42,32 +46,10 @@ class ParticipantVC: UIViewController {
             case .success(let data):
                 self.participants = data
             }
-            self.participantView.raffleName.text = self.raffleDetails.name
-        }
-        /*
-        guard let pathToJSON = Bundle.main.path(forResource: "Participants", ofType: "json") else {
-            fatalError("Unexpected Error: cannot find JSON")}
-        
-        let url = URL(fileURLWithPath: pathToJSON)
-        do {
-            let data = try Data(contentsOf: url)
-            self.participants = try Participants.getAllParticipants(from: data)
-        } catch {
-            print(error)
-            fatalError("Unexpected Error in Participant home")
-        }
- */
+            
     }
     
-
-    private func setUp() {
-        participantView.cancelView.addTarget(self, action: #selector(cancel), for: .touchUpInside)
     }
-    
-    @objc func cancel() {
-        dismiss(animated: true, completion: nil)
-    }
-
 }
 
 extension ParticipantVC: UITableViewDelegate, UITableViewDataSource {

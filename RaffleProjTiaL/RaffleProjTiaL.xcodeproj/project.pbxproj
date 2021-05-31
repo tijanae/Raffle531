@@ -31,6 +31,13 @@
 		4E3EE68026644A59003E9C99 /* ParticipantsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE67F26644A59003E9C99 /* ParticipantsWrapper.swift */; };
 		4E3EE68526644F66003E9C99 /* RaffleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE68426644F66003E9C99 /* RaffleModel.swift */; };
 		4E3EE68D266451E2003E9C99 /* RaffleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */; };
+		4EC13C6926653ACA0068D24C /* WinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C6826653ACA0068D24C /* WinnerModel.swift */; };
+		4EC13C7126653CE70068D24C /* WinnerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C7026653CE70068D24C /* WinnerWrapper.swift */; };
+		4EC13C8526656F590068D24C /* noParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C8426656F590068D24C /* noParticipantsView.swift */; };
+		4EC13C99266574CA0068D24C /* WatchListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C98266574CA0068D24C /* WatchListTVC.swift */; };
+		4EC13CA72665813D0068D24C /* noSavedWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13CA62665813D0068D24C /* noSavedWatchListView.swift */; };
+		4EC13CAD2665866C0068D24C /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13CAC2665866C0068D24C /* PersistenceHelper.swift */; };
+		4EC13CB5266586960068D24C /* FavePersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13CB4266586960068D24C /* FavePersistenceManager.swift */; };
 		4EF8AA6826627F770068FFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA6726627F770068FFCC /* AppDelegate.swift */; };
 		4EF8AA6A26627F770068FFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA6926627F770068FFCC /* SceneDelegate.swift */; };
 		4EF8AA6C26627F770068FFCC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8AA6B26627F770068FFCC /* TabBar.swift */; };
@@ -87,6 +94,13 @@
 		4E3EE67F26644A59003E9C99 /* ParticipantsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsWrapper.swift; sourceTree = "<group>"; };
 		4E3EE68426644F66003E9C99 /* RaffleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleModel.swift; sourceTree = "<group>"; };
 		4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleWrapper.swift; sourceTree = "<group>"; };
+		4EC13C6826653ACA0068D24C /* WinnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerModel.swift; sourceTree = "<group>"; };
+		4EC13C7026653CE70068D24C /* WinnerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerWrapper.swift; sourceTree = "<group>"; };
+		4EC13C8426656F590068D24C /* noParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noParticipantsView.swift; sourceTree = "<group>"; };
+		4EC13C98266574CA0068D24C /* WatchListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTVC.swift; sourceTree = "<group>"; };
+		4EC13CA62665813D0068D24C /* noSavedWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noSavedWatchListView.swift; sourceTree = "<group>"; };
+		4EC13CAC2665866C0068D24C /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
+		4EC13CB4266586960068D24C /* FavePersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavePersistenceManager.swift; sourceTree = "<group>"; };
 		4EF8AA6426627F770068FFCC /* RaffleProjTiaL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaffleProjTiaL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF8AA6726627F770068FFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EF8AA6926627F770068FFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +155,7 @@
 				4E3EE5F026633F83003E9C99 /* RegisterView.swift */,
 				4E3EE5FB2663DA2B003E9C99 /* ParticipantVC.swift */,
 				4E3EE6002663DA87003E9C99 /* ParticipantView.swift */,
+				4EC13C8426656F590068D24C /* noParticipantsView.swift */,
 				4E3EE6052663DB21003E9C99 /* participantTVC.swift */,
 				4E3EE6202663F511003E9C99 /* WinnerView.swift */,
 				4E3EE6252663F6FD003E9C99 /* WinnerVC.swift */,
@@ -155,6 +170,15 @@
 				4E3EE6402663FFA9003E9C99 /* WatchListHelper.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		4EC13CAB2665862F0068D24C /* PersistenceHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4EC13CAC2665866C0068D24C /* PersistenceHelper.swift */,
+				4EC13CB4266586960068D24C /* FavePersistenceManager.swift */,
+			);
+			path = PersistenceHelper;
 			sourceTree = "<group>";
 		};
 		4EF8AA5B26627F770068FFCC = {
@@ -184,6 +208,7 @@
 				4EF8AAA22662808C0068FFCC /* Extensions */,
 				4EF8AAA3266280B50068FFCC /* JSON */,
 				4EF8AAA4266280CC0068FFCC /* Models */,
+				4EC13CAB2665862F0068D24C /* PersistenceHelper */,
 				4EF8AAA5266280EA0068FFCC /* NetworkHelper */,
 				4E3EE6372663FF32003E9C99 /* Persistence */,
 				4EF8AAA0266280290068FFCC /* SupportingFiles */,
@@ -253,9 +278,11 @@
 			children = (
 				4EF8AABD2662864C0068FFCC /* AllRaffleModel.swift */,
 				4E3EE6152663E469003E9C99 /* ParticipantsModel.swift */,
+				4EC13C6826653ACA0068D24C /* WinnerModel.swift */,
 				4E3EE64B26640006003E9C99 /* WatchListPersisted.swift */,
 				4E3EE67F26644A59003E9C99 /* ParticipantsWrapper.swift */,
 				4E3EE68426644F66003E9C99 /* RaffleModel.swift */,
+				4EC13C7026653CE70068D24C /* WinnerWrapper.swift */,
 				4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */,
 			);
 			path = Models;
@@ -288,6 +315,8 @@
 				4E3EE5E326633036003E9C99 /* NewRaffleView.swift */,
 				4E3EE62D2663F91A003E9C99 /* WatchListVC.swift */,
 				4E3EE6322663F932003E9C99 /* WatchListView.swift */,
+				4EC13CA62665813D0068D24C /* noSavedWatchListView.swift */,
+				4EC13C98266574CA0068D24C /* WatchListTVC.swift */,
 			);
 			path = RaffleMain;
 			sourceTree = "<group>";
@@ -430,17 +459,23 @@
 				4E3EE5E426633036003E9C99 /* NewRaffleView.swift in Sources */,
 				4E3EE66B2664332F003E9C99 /* RaffleApiHelper.swift in Sources */,
 				4E3EE5DA26632E55003E9C99 /* NewRaffleVC.swift in Sources */,
+				4EC13C7126653CE70068D24C /* WinnerWrapper.swift in Sources */,
 				4E3EE68526644F66003E9C99 /* RaffleModel.swift in Sources */,
 				4EF8AAB4266283070068FFCC /* RaffleHomeVC.swift in Sources */,
+				4EC13C99266574CA0068D24C /* WatchListTVC.swift in Sources */,
 				4E3EE6262663F6FD003E9C99 /* WinnerVC.swift in Sources */,
 				4E3EE6012663DA87003E9C99 /* ParticipantView.swift in Sources */,
 				4E3EE68026644A59003E9C99 /* ParticipantsWrapper.swift in Sources */,
 				4EF8AA6826627F770068FFCC /* AppDelegate.swift in Sources */,
+				4EC13C8526656F590068D24C /* noParticipantsView.swift in Sources */,
 				4EF8AAAC266282CF0068FFCC /* LoginVC.swift in Sources */,
 				4E3EE62E2663F91A003E9C99 /* WatchListVC.swift in Sources */,
+				4EC13C6926653ACA0068D24C /* WinnerModel.swift in Sources */,
 				4E3EE68D266451E2003E9C99 /* RaffleWrapper.swift in Sources */,
+				4EC13CB5266586960068D24C /* FavePersistenceManager.swift in Sources */,
 				4E3EE6412663FFA9003E9C99 /* WatchListHelper.swift in Sources */,
 				4E3EE6392663FF55003E9C99 /* PersistenceHelper.swift in Sources */,
+				4EC13CA72665813D0068D24C /* noSavedWatchListView.swift in Sources */,
 				4E3EE6062663DB21003E9C99 /* participantTVC.swift in Sources */,
 				4EF8AAC326628C580068FFCC /* RaffleView.swift in Sources */,
 				4E3EE5FC2663DA2B003E9C99 /* ParticipantVC.swift in Sources */,
@@ -451,6 +486,7 @@
 				4E3EE5DF26632F85003E9C99 /* RaffleTextField.swift in Sources */,
 				4E3EE5F126633F83003E9C99 /* RegisterView.swift in Sources */,
 				4E3EE6162663E469003E9C99 /* ParticipantsModel.swift in Sources */,
+				4EC13CAD2665866C0068D24C /* PersistenceHelper.swift in Sources */,
 				4EF8AAC826628D670068FFCC /* RaffleCVC.swift in Sources */,
 				4EF8AABE2662864C0068FFCC /* AllRaffleModel.swift in Sources */,
 			);

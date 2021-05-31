@@ -12,6 +12,14 @@ class RaffleDetailVC: UIViewController {
     var raffleDetails: AllRaffles!
     var raffleDetailObject = RaffleDetailView()
     
+    var childVC = UIViewController()
+    
+    /*
+    private let registerChild = RegisterVC()
+    private let participantChild = ParticipantVC()
+    private let winnerChild = WinnerVC()
+    */
+    
     override func loadView() {
         view = raffleDetailObject
     }
@@ -21,12 +29,31 @@ class RaffleDetailVC: UIViewController {
         super.viewDidLoad()
         loadData()
         setUp()
+        addChildVC()
         view.backgroundColor = .lightGray
-
+       
         // Do any additional setup after loading the view.
     }
     
     //MARK: Private Funcs
+    
+    private func addChildVC() {
+        addChild(childVC)
+        view.addSubview(childVC.view)
+        //childVC.raffleDetails = raffleDetails
+        childVC.didMove(toParent: self)
+        setChildConstraints()
+    }
+    
+    private func setChildConstraints() {
+        
+        childVC.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        [childVC.view.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+         childVC.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+         childVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+         childVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)].forEach {$0.isActive = true}
+    }
     
     private func loadData() {
         raffleDetailObject.raffleName.text = raffleDetails.name
@@ -34,38 +61,45 @@ class RaffleDetailVC: UIViewController {
     
     private func setUp() {
         raffleDetailObject.cancelRaffle.addTarget(self, action: #selector(cancel), for: .touchUpInside)
-        raffleDetailObject.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
-        raffleDetailObject.participantsButton.addTarget(self, action: #selector(participants), for: .touchUpInside)
-        raffleDetailObject.winnerButton.addTarget(self, action: #selector(winner), for: .touchUpInside)
-        
+        raffleDetailObject.raffleSegments.addTarget(self, action: #selector(newView), for: .valueChanged)
+        raffleDetailObject.faveRaffle.addTarget(self, action: #selector(save), for: .touchUpInside)
     }
     
     // MARK: OBJC
+    
+    @objc func save() {
+        let raffle = WatchListPersisted(id: raffleDetails.id, name: raffleDetails.name, created_at: raffleDetails.created_at)
+        //DispatchQueue.global(qos: .utility).async {
+          //  try? Fav
+        //}
+    }
     
     @objc func cancel() {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func register() {
-        let register = RegisterVC()
-        register.raffleDetails = raffleDetails
-        register.modalPresentationStyle = .fullScreen
-        present(register, animated: true, completion: nil)
-    }
     
-    @objc func participants() {
-        let viewParticipants = ParticipantVC()
-        viewParticipants.raffleDetails = raffleDetails
-        viewParticipants.modalPresentationStyle = .fullScreen
-        present(viewParticipants, animated: true, completion: nil)
-    }
-    
-    @objc func winner() {
-       let winnerView = WinnerVC()
-        winnerView.modalPresentationStyle = .fullScreen
-        present(winnerView, animated: true, completion: nil)
-    }
+    @objc func newView(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            let viewParticipants = ParticipantVC()
+            childVC = viewParticipants
+            viewParticipants.raffleDetails = raffleDetails
+            viewDidLoad()
 
+        case 2:
+            let winnerView = WinnerVC()
+            childVC = winnerView
+            winnerView.raffleDetails = raffleDetails
+            viewDidLoad()
+            
+        default:
+            let register = RegisterVC()
+            childVC = register
+            viewDidLoad()
+        }
+    }
     
+
 
 }

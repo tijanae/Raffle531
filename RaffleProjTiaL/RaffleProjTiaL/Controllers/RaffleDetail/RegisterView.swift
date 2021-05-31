@@ -11,67 +11,14 @@ class RegisterView: UIView {
 
     //MARK: UIObject
     
-    lazy var raffleTitle: UILabel = {
-       let label = UILabel()
-        label.text = "RAFFLE NAME"
-        label.textColor = .black
-        return label
-    }()
+    var firstNameField = RaffleTextField(placeholder: "First Name")
     
-    lazy var cancelButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.tintColor = .black
-        return button
-    }()
+    var lastNameField = RaffleTextField(placeholder: "Last Name")
     
-    lazy var firstNameField: UITextField = {
-        let text = UITextField()
-        text.text = " First Name"
-        text.backgroundColor = .black
-        text.borderStyle = .line
-//        text.font = UIFont(name: "Damascus", size: 10)
-        text.textColor = .white
-        text.layer.borderWidth = 2
-        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-        return text
-       }()
+    var emailField = RaffleTextField(placeholder: "example@mail.com")
     
-    lazy var lastNameField: UITextField = {
-        let text = UITextField()
-        text.text = " Last Name"
-        text.backgroundColor = .black
-        text.borderStyle = .line
-//        text.font = UIFont(name: "Damascus", size: 10)
-        text.textColor = .white
-        text.layer.borderWidth = 2
-        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-        return text
-       }()
-    
-    lazy var emailField: UITextField = {
-        let text = UITextField()
-        text.text = " example@mail.com"
-        text.backgroundColor = .black
-        text.borderStyle = .line
-//        text.font = UIFont(name: "Damascus", size: 10)
-        text.textColor = .white
-        text.layer.borderWidth = 2
-        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-        return text
-       }()
-    
-    lazy var phoneField: UITextField = {
-        let text = UITextField()
-        text.text = " Phone"
-        text.backgroundColor = .black
-        text.borderStyle = .line
-//        text.font = UIFont(name: "Damascus", size: 10)
-        text.textColor = .white
-        text.layer.borderWidth = 2
-        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-        return text
-       }()
+    var phoneField = RaffleTextField(placeholder: "Phone Number")
+        
     
     lazy var submitButton: UIButton = {
         let button = UIButton()
@@ -94,34 +41,22 @@ class RegisterView: UIView {
     //MARK: Private Func
     
     private func addConstraints() {
-        raffleTitleConstraint()
+
         firstNameConstraint()
         lastNameConstraint()
         emailConstraint()
         phoneConstraint()
         submitButtonConstraint()
-        cancelButtonConstraint()
     }
     
-    private func raffleTitleConstraint() {
-        addSubview(raffleTitle)
-        
-        raffleTitle.translatesAutoresizingMaskIntoConstraints = false
-        
-        [raffleTitle.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
-         raffleTitle.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
-         raffleTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-         //raffleTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
-        ].forEach {$0.isActive = true}
-    }
     
     private func firstNameConstraint() {
         addSubview(firstNameField)
         
         firstNameField.translatesAutoresizingMaskIntoConstraints = false
         
-        [firstNameField.topAnchor.constraint(equalTo: topAnchor, constant: 200 ),
-         firstNameField.bottomAnchor.constraint(equalTo: topAnchor, constant: 250),
+        [firstNameField.topAnchor.constraint(equalTo: topAnchor, constant: 75 ),
+         firstNameField.bottomAnchor.constraint(equalTo: topAnchor, constant: 125),
          firstNameField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          firstNameField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
@@ -132,8 +67,8 @@ class RegisterView: UIView {
         
         lastNameField.translatesAutoresizingMaskIntoConstraints = false
         
-        [lastNameField.topAnchor.constraint(equalTo: topAnchor, constant: 275 ),
-         lastNameField.bottomAnchor.constraint(equalTo: topAnchor, constant: 325),
+        [lastNameField.topAnchor.constraint(equalTo: topAnchor, constant: 150 ),
+         lastNameField.bottomAnchor.constraint(equalTo: topAnchor, constant: 200),
          lastNameField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          lastNameField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
@@ -144,8 +79,8 @@ class RegisterView: UIView {
         
         emailField.translatesAutoresizingMaskIntoConstraints = false
         
-        [emailField.topAnchor.constraint(equalTo: topAnchor, constant: 350 ),
-         emailField.bottomAnchor.constraint(equalTo: topAnchor, constant: 400),
+        [emailField.topAnchor.constraint(equalTo: topAnchor, constant: 225 ),
+         emailField.bottomAnchor.constraint(equalTo: topAnchor, constant: 275),
          emailField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          emailField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
@@ -156,8 +91,8 @@ class RegisterView: UIView {
         
         phoneField.translatesAutoresizingMaskIntoConstraints = false
         
-        [phoneField.topAnchor.constraint(equalTo: topAnchor, constant: 425 ),
-         phoneField.bottomAnchor.constraint(equalTo: topAnchor, constant: 475),
+        [phoneField.topAnchor.constraint(equalTo: topAnchor, constant: 300 ),
+         phoneField.bottomAnchor.constraint(equalTo: topAnchor, constant: 350),
          phoneField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          phoneField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
         
@@ -168,24 +103,13 @@ class RegisterView: UIView {
         
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
-        [submitButton.topAnchor.constraint(equalTo: topAnchor, constant: 550 ),
-         submitButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 600),
-         submitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
-         submitButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 275)].forEach {$0.isActive = true}
+        [submitButton.topAnchor.constraint(equalTo: topAnchor, constant: 400 ),
+         submitButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 450),
+         submitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 145),
+         submitButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 245)].forEach {$0.isActive = true}
         
     }
     
-    private func cancelButtonConstraint() {
-        addSubview(cancelButton)
-        
-        cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        [cancelButton.topAnchor.constraint(equalTo: topAnchor, constant: 150 ),
-         cancelButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 175),
-         cancelButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -75),
-         cancelButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
-        
-    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

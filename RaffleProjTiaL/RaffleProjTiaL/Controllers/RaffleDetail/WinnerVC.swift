@@ -11,6 +11,10 @@ class WinnerVC: UIViewController {
     
     private let winnerView = WinnerView()
     
+    //MARK: Data
+    var raffleDetails: AllRaffles!
+    var winner = [Winner]()
+    
     override func loadView() {
         view = winnerView
     }
@@ -25,12 +29,42 @@ class WinnerVC: UIViewController {
     
     //MARK: Private Func
     
-    private func setUp() {
-        winnerView.cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+    private func loadData() {
+        raffleApiHelper.manager.getWinner(object: String(raffleDetails.id)) { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                print("we've got a winner! \(data)")
+            }
+        }
     }
     
-    @objc func cancel() {
+    private func setUp() {
+        winnerView.submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
+    }
+    
+    
+    @objc func submit() {
+        guard let token = createTokenFromTF() else {fatalError("error choosing winner")  }
+        
+        raffleApiHelper.manager.setWinner(object: String(raffleDetails.id), token) { [weak self] result in
+            switch result {
+            case .failure:
+                print("error getting winner")
+            case .success:
+                print("hello winner")
+            }
+        }
         dismiss(animated: true, completion: nil)
     }
+    
+    private func createTokenFromTF() -> WinnerWrapper? {
+        guard let tokenTF = winnerView.tokenField.text else {
+            fatalError("Must enter Token")
+        }
+        return WinnerWrapper(secret_token: tokenTF)
+    }
+    
 
 }

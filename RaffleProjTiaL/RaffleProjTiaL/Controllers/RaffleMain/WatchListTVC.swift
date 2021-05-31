@@ -1,19 +1,18 @@
 //
-//  RaffleCVC.swift
+//  WatchListTVC.swift
 //  RaffleProjTiaL
 //
-//  Created by Tia Lendor on 5/29/21.
+//  Created by Tia Lendor on 5/31/21.
 //
 
 import UIKit
 
-class RaffleCVC: UICollectionViewCell {
-    
-    //MARK: UIObjects
-    
+class WatchListTVC: UITableViewCell {
+
     lazy var raffleTitle: UILabel = {
        let label = UILabel()
-        label.font = UIFont(name: "GillSans-UltraBold", size: 15)
+        //label.contentMode = .scaleToFill
+        //label.numberOfLines = 2
         return label
     }()
     
@@ -56,13 +55,15 @@ class RaffleCVC: UICollectionViewCell {
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addConstraints()
-        contentView.backgroundColor = .lightGray
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
     }
-    
-    //MARK: Private Func
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        addConstraints()
+    }
     
     private func addConstraints() {
         raffleTitleConstraint()
@@ -138,4 +139,5 @@ class RaffleCVC: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }

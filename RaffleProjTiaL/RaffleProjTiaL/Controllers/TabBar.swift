@@ -10,7 +10,7 @@ import UIKit
 class TabBar: UITabBarController{
 
     let firstvc = RaffleHomeVC()
-    let secondvc = RaffleHomeVC()
+    let secondvc = WatchListVC()
     let thirdvc = RaffleHomeVC()
     
     

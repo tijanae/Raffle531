@@ -11,25 +11,19 @@ class ParticipantView: UIView {
 
     //    MARK: UIOBJECTS
     
-    lazy var cancelView: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.tintColor = .black
-        return button
-    }()
-    
-    lazy var raffleName: UILabel = {
-        let label = UILabel()
-        label.text = "Raffle Name"
-        label.textColor = .black
-        return label
-    }()
-    
     lazy var participantTV: UITableView = {
         let table = UITableView()
         table.backgroundColor = .clear
         table.register(participantTVC.self, forCellReuseIdentifier: "participantTable")
         return table
+    }()
+    
+    lazy var participantLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Be the first to register"
+        label.font = UIFont(name: "GillSans-UltraBold", size: 20)
+        label.textColor = .black
+        return label
     }()
     
     
@@ -43,29 +37,21 @@ class ParticipantView: UIView {
     }
     
     private func constraints() {
-        raffleNameConstraint()
-        cancelViewConstraint()
         playlistTVConstraint()
+        participantLabelConstraint()
         
     }
     
-    private func raffleNameConstraint() {
-        addSubview(raffleName)
+    private func participantLabelConstraint() {
+        addSubview(participantLabel)
         
-        raffleName.translatesAutoresizingMaskIntoConstraints = false
+        participantLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [raffleName.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-         raffleName.bottomAnchor.constraint(equalTo: topAnchor, constant: 150),
-         raffleName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)].forEach {$0.isActive = true}
-    }
-    
-    private func cancelViewConstraint() {
-        addSubview(cancelView)
-        
-        cancelView.translatesAutoresizingMaskIntoConstraints = false
-        
-        [cancelView.topAnchor.constraint(equalTo: topAnchor, constant: 150),
-         cancelView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25)].forEach {$0.isActive = true}
+        [participantLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
+         participantLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
+         participantLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         //participantLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+        ].forEach {$0.isActive = true}
     }
     
     private func playlistTVConstraint() {

@@ -9,38 +9,22 @@ import UIKit
 
 class WinnerView: UIView {
 
-    lazy var raffleName: UILabel = {
-        let label = UILabel()
-        label.text = "Win A PONY"
-        label.textColor = .black
-        return label
-    }()
-    
-    lazy var cancelButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.tintColor = .black
-        return button
-    }()
-    
     lazy var winnerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Select Winner"
+        label.text = "Select A Winner"
+        label.font = UIFont(name: "GillSans-UltraBold", size: 20)
         label.textColor = .black
         return label
     }()
     
-    lazy var tokenField: UITextField = {
-        let text = UITextField()
-        text.text = " Enter token"
-        text.backgroundColor = .black
-        text.borderStyle = .line
-//        text.font = UIFont(name: "Damascus", size: 10)
-        text.textColor = .white
-        text.layer.borderWidth = 2
-        text.layer.borderColor = CGColor(red: 255, green: 255, blue: 255, alpha: 1)
-        return text
-       }()
+    var tokenField = RaffleTextField(placeholder: "Enter token")
+    
+    lazy var textSecureButton: UIButton = {
+       let button = UIButton()
+        button.tintColor = .white
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        return button
+    }()
     
     lazy var submitButton: UIButton = {
         let button = UIButton()
@@ -63,24 +47,13 @@ class WinnerView: UIView {
     //MARK: Private Funcs
     
     private func constraints() {
-        raffleNameConstraint()
         winnerLabelConstraint()
         tokenFieldConstraint()
         submitButtonConstraint()
-        cancelButtonConstraint()
+        textSecureButtonConstraint()
     }
     
-    private func raffleNameConstraint() {
-        addSubview(raffleName)
-        
-        raffleName.translatesAutoresizingMaskIntoConstraints = false
-        
-        [raffleName.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
-         raffleName.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
-         raffleName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-         //raffleName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
-        ].forEach {$0.isActive = true}
-    }
+
     
     private func winnerLabelConstraint() {
         addSubview(winnerLabel)
@@ -99,11 +72,22 @@ class WinnerView: UIView {
         
         tokenField.translatesAutoresizingMaskIntoConstraints = false
         
-        [tokenField.topAnchor.constraint(equalTo: topAnchor, constant: 200 ),
-         tokenField.bottomAnchor.constraint(equalTo: topAnchor, constant: 250),
+        [tokenField.topAnchor.constraint(equalTo: topAnchor, constant: 150 ),
+         tokenField.bottomAnchor.constraint(equalTo: topAnchor, constant: 200),
          tokenField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
          tokenField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
+    }
+    
+    private func textSecureButtonConstraint() {
+        addSubview(textSecureButton)
+        
+        textSecureButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        [textSecureButton.topAnchor.constraint(equalTo: tokenField.topAnchor),
+         textSecureButton.bottomAnchor.constraint(equalTo: tokenField.bottomAnchor),
+         textSecureButton.leadingAnchor.constraint(equalTo: tokenField.trailingAnchor, constant: -50),
+         textSecureButton.trailingAnchor.constraint(equalTo: tokenField.trailingAnchor, constant: -10)].forEach{$0.isActive = true}
     }
     
     private func submitButtonConstraint() {
@@ -111,24 +95,14 @@ class WinnerView: UIView {
         
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
-        [submitButton.topAnchor.constraint(equalTo: topAnchor, constant: 550 ),
-         submitButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 600),
-         submitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 150),
-         submitButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 275)].forEach {$0.isActive = true}
+        [submitButton.topAnchor.constraint(equalTo: topAnchor, constant: 250 ),
+         submitButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 300),
+         submitButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 145),
+         submitButton.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 245)].forEach {$0.isActive = true}
         
     }
     
-    private func cancelButtonConstraint() {
-        addSubview(cancelButton)
-        
-        cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        [cancelButton.topAnchor.constraint(equalTo: topAnchor, constant: 150 ),
-         cancelButton.bottomAnchor.constraint(equalTo: topAnchor, constant: 175),
-         cancelButton.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -75),
-         cancelButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
-        
-    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

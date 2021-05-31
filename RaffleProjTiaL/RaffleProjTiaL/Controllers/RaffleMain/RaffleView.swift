@@ -14,6 +14,7 @@ class RaffleView: UIView {
     lazy var appLabel: UILabel = {
         let label = UILabel()
         label.text = "Summer Raffles"
+        label.font = UIFont(name: "GillSans-UltraBold", size: 30)
         label.textColor = .black
         return label
     }()
@@ -22,6 +23,20 @@ class RaffleView: UIView {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.tintColor = .black
+        return button
+    }()
+    
+    lazy var filterSegment: UISegmentedControl = {
+        let button = UISegmentedControl(items: ["Newer","Older"])
+        let xPostion:CGFloat = 10
+        let yPostion:CGFloat = 150
+        let elementWidth:CGFloat = 300
+        let elementHeight:CGFloat = 30
+                
+        button.frame = CGRect(x: xPostion, y: yPostion, width: elementWidth, height: elementHeight)
+        button.selectedSegmentIndex = 1
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.lightGray
         return button
     }()
     
@@ -41,7 +56,7 @@ class RaffleView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         addConstraints()
-        
+        addSubview(filterSegment)
     }
     
     //MARK: Private Func
@@ -58,7 +73,7 @@ class RaffleView: UIView {
         
         appLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [appLabel.topAnchor.constraint(equalTo: topAnchor, constant: 150 ),
+        [appLabel.topAnchor.constraint(equalTo: topAnchor, constant: 75 ),
          //appLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
          appLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
         ].forEach {$0.isActive = true}
@@ -69,7 +84,7 @@ class RaffleView: UIView {
         
         createRaffle.translatesAutoresizingMaskIntoConstraints = false
         
-        [createRaffle.topAnchor.constraint(equalTo: topAnchor, constant: 150),
+        [createRaffle.topAnchor.constraint(equalTo: topAnchor, constant: 155),
          //createRaffle.bottomAnchor.constraint(equalTo: topAnchor, constant: 50),
          //createRaffle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 200),
          createRaffle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25)].forEach {$0.isActive = true}

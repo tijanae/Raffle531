@@ -20,15 +20,13 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .darkGray
 
         // Do any additional setup after loading the view.
     }
     
     private func setUp() {
-        registerView.raffleTitle.text = raffleDetails.name
         registerView.submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
-        registerView.cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         
     }
     
@@ -50,9 +48,6 @@ class RegisterVC: UIViewController {
         //dismiss(animated: true, completion: nil)
     }
 
-    @objc func cancel() {
-        dismiss(animated: true, completion: nil)
-    }
     
     private func createParticipantFromFields() -> ParticipantWrapper? {
         guard let participantFirstName = registerView.firstNameField.text else {

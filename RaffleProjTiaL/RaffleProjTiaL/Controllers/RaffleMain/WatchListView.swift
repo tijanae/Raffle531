@@ -14,6 +14,7 @@ class WatchListView: UIView {
     lazy var faveLabel: UILabel = {
        let label = UILabel()
         label.text = "Watch List"
+        label.font = UIFont(name: "GillSans-UltraBold", size: 30)
         label.textColor = .black
         return label
     }()
@@ -21,7 +22,7 @@ class WatchListView: UIView {
     lazy var watchTV: UITableView = {
         let table = UITableView()
         table.backgroundColor = .clear
-        table.register(participantTVC.self, forCellReuseIdentifier: "participantTable")
+        table.register(WatchListTVC.self, forCellReuseIdentifier: "watchListTable")
         return table
     }()
     

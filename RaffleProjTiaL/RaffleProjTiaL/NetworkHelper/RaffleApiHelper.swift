@@ -98,6 +98,55 @@ struct raffleApiHelper {
         })
     }
     
+    func getWinner(object: String, completionHandler: @escaping (Result<[Winner], AppError>) -> () ) {
+        
+        var winnerURL: URL {
+            guard let url = URL(string: "https://raffle-fs-app.herokuapp.com/api/raffles/\(object)/winner") else { fatalError("Error: Invalid URL")}
+            return url
+        }
+        
+        NetworkHelper.manager.performDataTask(withUrl: winnerURL, andMethod: .get) { (result) in
+            switch result {
+            case .failure(let error):
+                completionHandler(.failure(error))
+                return
+            case .success(let data):
+                do{
+                    let winnerData = try JSONDecoder().decode([Winner].self, from: data)
+                    completionHandler(.success(winnerData))
+                } catch {
+                    completionHandler(.failure(.couldNotParseJSON(rawError: error)))
+                }
+            }
+        }
+    }
+    
+    
+    
+    func setWinner(object: String, _ winner: WinnerWrapper, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+        
+        var winnerURL: URL {
+            guard let url = URL(string: "https://raffle-fs-app.herokuapp.com/api/raffles/\(object)/winner") else { fatalError("Error: Invalid URL")}
+            return url
+        }
+        
+        //let participantWrapper = ParticipantWrapper(participant: participant)
+        guard let encodedWinnerWrapper = try? JSONEncoder().encode(winner) else {
+            fatalError("Unable to json encode project")
+        }
+        print(String(data: encodedWinnerWrapper, encoding: .utf8)!)
+        NetworkHelper.manager.performDataTask(withUrl: winnerURL, andHTTPBody: encodedWinnerWrapper, andMethod: .put, completionHandler: { result in
+            switch result {
+            case let .success(data):
+                print("yay it worked")
+                completionHandler(.success(data))
+            case let .failure(error):
+                print("yah missing something hun")
+                completionHandler(.failure(error))
+            }
+        })
+    }
+    
     private var raffleURL: URL {
         guard let url = URL(string: "https://raffle-fs-app.herokuapp.com/api/raffles") else { fatalError("Error: Invalid URL")}
         return url
