@@ -19,7 +19,7 @@ struct Participants: Codable {
     let lastname: String
     let email: String
     let phone: String?
-    let registered_at: String
+    //let registered_at: String
     
     
     static func getAllParticipants(from data: Data) throws -> [Participants] {

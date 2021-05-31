@@ -43,14 +43,22 @@ class RaffleHomeVC: UIViewController {
                 print(error)
             case .success(let data):
                 self.raffleData = data
+                self.raffleData = self.raffleData.sorted{$0.created_at > $1.created_at}
             }
         }
+        
         
     }
     
     private func setUp() {
         raffleView.createRaffle.addTarget(self, action: #selector(createRaffle), for: .touchUpInside)
     }
+    
+    private func sortRaffle() {
+        raffleData = raffleData.sorted{$0.created_at < $1.created_at}
+        raffleView.raffleCollection.reloadData()
+    }
+ 
     
     @objc func createRaffle() {
         let newRaffle = NewRaffleVC()
@@ -78,9 +86,15 @@ extension RaffleHomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
         raffleCell.raffleTitle.text = data.name
         raffleCell.createdImage.image = UIImage(named: "calendar")
         raffleCell.createdLabel.text = data.dateCreated
-        raffleCell.raffleStatus.image = UIImage(named: "closed")
-        raffleCell.raffleStatusLabel.text = "Fix Date"
+        //raffleCell.raffleStatus.image = UIImage(named: "closed")
+        raffleCell.raffleStatusLabel.text = data.dateRaffled
         raffleCell.winnerLabel.text = "convert to user"
+        
+        if data.dateRaffled == "This Raffle has not closed yet." {
+            raffleCell.raffleStatus.image = UIImage(named: "open")
+        } else {
+            raffleCell.raffleStatus.image = UIImage(named: "closed")
+        }
      
         return raffleCell
     }

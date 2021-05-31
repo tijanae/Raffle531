@@ -74,15 +74,15 @@ struct raffleApiHelper {
         }
     }
     
-    func postParticipants(object: String, _ participant: Participants, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+    func postParticipants(object: String, _ participant: ParticipantWrapper, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
         
         var participantURL: URL {
             guard let url = URL(string: "https://raffle-fs-app.herokuapp.com/api/raffles/\(object)/participants") else { fatalError("Error: Invalid URL")}
             return url
         }
         
-        let participantWrapper = ParticipantWrapper(participant: participant)
-        guard let encodedParticipantWrapper = try? JSONEncoder().encode(participantWrapper) else {
+        //let participantWrapper = ParticipantWrapper(participant: participant)
+        guard let encodedParticipantWrapper = try? JSONEncoder().encode(participant) else {
             fatalError("Unable to json encode project")
         }
         print(String(data: encodedParticipantWrapper, encoding: .utf8)!)

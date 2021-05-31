@@ -69,6 +69,8 @@ class RaffleCVC: UICollectionViewCell {
         raffleTitleConstraint()
         createdLabelConstraint()
         createdImageConstraint()
+        raffleStatusConstraint()
+        raffleStatusLabelConstraint()
     }
     
     private func raffleTitleConstraint() {
@@ -106,6 +108,31 @@ class RaffleCVC: UICollectionViewCell {
          //createdLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35),
          createdLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
          createdLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
+    }
+    
+    private func raffleStatusConstraint() {
+        
+        contentView.addSubview(raffleStatus)
+        
+        raffleStatus.translatesAutoresizingMaskIntoConstraints = false
+        
+        [raffleStatus.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+         //raffleStatus.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25),
+         raffleStatus.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         //raffleStatus.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)
+        ].forEach {$0.isActive = true}
+    }
+    
+    private func raffleStatusLabelConstraint() {
+        
+        contentView.addSubview(raffleStatusLabel)
+        
+        raffleStatusLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        [raffleStatusLabel.topAnchor.constraint(equalTo: topAnchor, constant: 55),
+         //raffleStatusLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35),
+         raffleStatusLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
+         raffleStatusLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
     
     

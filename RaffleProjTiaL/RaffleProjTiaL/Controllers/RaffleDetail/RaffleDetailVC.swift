@@ -47,8 +47,8 @@ class RaffleDetailVC: UIViewController {
     }
     
     @objc func register() {
-        
         let register = RegisterVC()
+        register.raffleDetails = raffleDetails
         register.modalPresentationStyle = .fullScreen
         present(register, animated: true, completion: nil)
     }

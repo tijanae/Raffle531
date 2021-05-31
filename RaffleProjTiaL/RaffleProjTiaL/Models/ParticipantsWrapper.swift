@@ -8,5 +8,8 @@
 import Foundation
 
 struct ParticipantWrapper: Codable {
-    let participant: Participants
+    let firstname: String
+    let lastname: String
+    let email: String
+    let phone: String?
 }

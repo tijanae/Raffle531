@@ -45,12 +45,12 @@ class NewRaffleVC: UIViewController {
             switch result {
             case .success:
                 print("yay it worked")
-            case let .failure:
-                print("oh noo. didnt work")
+            case .failure:
+                fatalError("error posting new raffle")
                 
             }
         }
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
     
     private func createProjectFromFields() -> Raffle? {
