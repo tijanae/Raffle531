@@ -21,6 +21,9 @@ class RegisterVC: UIViewController {
         super.viewDidLoad()
         setUp()
         view.backgroundColor = .darkGray
+        if raffleDetails.dateRaffled != "This Raffle has not closed yet."{
+            registerView.submitButton.isHidden = true
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -35,7 +38,7 @@ class RegisterVC: UIViewController {
             return
         }
         //print(raffleDetails.)
-        /*
+        
         raffleApiHelper.manager.postParticipants(object: String(raffleDetails.id), newParticipant) { [weak self] result in
             switch result {
             case .failure:
@@ -44,9 +47,9 @@ class RegisterVC: UIViewController {
                 print("hello new participant")
             }
         }
- */
         
         print("YAY youre registered")
+        registerView.submitButton.isHidden = true
         //dismiss(animated: true, completion: nil)
     }
 

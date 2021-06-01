@@ -23,7 +23,7 @@ class ParticipantVC: UIViewController {
     
     override func loadView() {
         loadData()
-        guard participants.count != 0 else {return view = noParticipantView}
+        guard participants.count == 0 else {return view = noParticipantView}
         view = participantView
     }
 
@@ -48,6 +48,9 @@ class ParticipantVC: UIViewController {
             }
             
     }
+        if raffleDetails.dateRaffled != "This Raffle has not closed yet."{
+            participantView.participantLabel.text = "This Raffle Has CLOSED!"
+        }
     
     }
 }
@@ -61,13 +64,13 @@ extension ParticipantVC: UITableViewDelegate, UITableViewDataSource {
         let data = participants[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "participantTable", for: indexPath) as? participantTVC else{return UITableViewCell()}
         cell.idLabel.text = String(data.id)
-        cell.nameLabel.text = data.firstname
+        cell.nameLabel.text = "\(data.firstname) \(data.lastname)"
         cell.emailLabel.text = data.email
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 150
     }
     
     

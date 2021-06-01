@@ -19,7 +19,7 @@ class DisplayWinnerView: UIView {
     
     lazy var winnerImage: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "leaf")
+        img.image = UIImage(named: "congrats")
         return img
     }()
     
@@ -39,6 +39,7 @@ class DisplayWinnerView: UIView {
     private func constraints() {
         winnerLabelConstraint()
         winnerNameConstraint()
+        winnerImageConstraint()
     }
     
     private func winnerLabelConstraint() {
@@ -61,7 +62,19 @@ class DisplayWinnerView: UIView {
         [winnerName.topAnchor.constraint(equalTo: topAnchor, constant: 100 ),
          winnerName.bottomAnchor.constraint(equalTo: topAnchor, constant: 150),
          winnerName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-         //winnerName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+         winnerName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+        ].forEach {$0.isActive = true}
+    }
+    
+    private func winnerImageConstraint() {
+        addSubview(winnerImage)
+        
+        winnerImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        [winnerImage.topAnchor.constraint(equalTo: topAnchor, constant: 150 ),
+         winnerImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 400),
+         winnerImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         winnerImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
     }
     

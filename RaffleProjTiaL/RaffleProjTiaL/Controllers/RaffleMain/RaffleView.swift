@@ -75,7 +75,7 @@ class RaffleView: UIView {
         
         [appLabel.topAnchor.constraint(equalTo: topAnchor, constant: 75 ),
          //appLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
-         appLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+         appLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
         ].forEach {$0.isActive = true}
     }
     

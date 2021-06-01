@@ -81,7 +81,7 @@ class RaffleCVC: UICollectionViewCell {
         
         [raffleTitle.topAnchor.constraint(equalTo: topAnchor, constant: 10),
          //raffleTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25),
-         raffleTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         raffleTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
          raffleTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
     
@@ -93,7 +93,7 @@ class RaffleCVC: UICollectionViewCell {
         
         [createdImage.topAnchor.constraint(equalTo: topAnchor, constant: 40),
          //createdImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
-         createdImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         createdImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
          //createdImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100)
         ].forEach {$0.isActive = true}
     }
@@ -106,7 +106,7 @@ class RaffleCVC: UICollectionViewCell {
         
         [createdLabel.topAnchor.constraint(equalTo: topAnchor, constant: 43),
          //createdLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35),
-         createdLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
+         createdLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 55),
          createdLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
     
@@ -118,7 +118,7 @@ class RaffleCVC: UICollectionViewCell {
         
         [raffleStatus.topAnchor.constraint(equalTo: topAnchor, constant: 75),
          //raffleStatus.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25),
-         raffleStatus.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+         raffleStatus.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
         ].forEach {$0.isActive = true}
     }
     
@@ -130,7 +130,7 @@ class RaffleCVC: UICollectionViewCell {
         
         [raffleStatusLabel.topAnchor.constraint(equalTo: topAnchor, constant: 80),
          //raffleStatusLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35),
-         raffleStatusLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
+         raffleStatusLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 55),
          raffleStatusLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
     

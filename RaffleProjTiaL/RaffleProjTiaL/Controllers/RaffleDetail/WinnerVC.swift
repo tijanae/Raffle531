@@ -18,13 +18,13 @@ class WinnerVC: UIViewController {
     
     override func loadView() {
         loadData()
-        guard raffleDetails.dateRaffled != "This Raffle has not closed yet." else {return view = displayWinnerView}
+        guard raffleDetails.dateRaffled == "This Raffle has not closed yet." else {return view = displayWinnerView}
         view = winnerView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .darkGray
         setUp()
 
         // Do any additional setup after loading the view.
@@ -39,10 +39,11 @@ class WinnerVC: UIViewController {
                 print(error)
             case .success(let data):
                 print("we've got a winner! \(data)")
-                self.winner = data
+                self.winner = [data]
+                self.displayWinnerView.winnerName.text = "\(self.winner[0].firstname) \(self.winner[0].lastname)"
             }
         }
-        print(winner)
+        //displayWinnerView.winnerName.text = "\(winner[0].firstname) \(winner[0].lastname)"
     }
     
     private func setUp() {

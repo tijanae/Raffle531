@@ -14,6 +14,8 @@ class RaffleDetailVC: UIViewController {
     
     var childVC = UIViewController()
     
+    private let participantChild = ParticipantVC()
+    
     /*
     private let registerChild = RegisterVC()
     private let participantChild = ParticipantVC()
@@ -30,7 +32,8 @@ class RaffleDetailVC: UIViewController {
         loadData()
         setUp()
         addChildVC()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .systemIndigo
+        //view.backgroundColor = UIColor(red: 8/255, green: 92/255, blue: 0/255, alpha: 10)
        
         // Do any additional setup after loading the view.
     }
@@ -72,6 +75,7 @@ class RaffleDetailVC: UIViewController {
         DispatchQueue.global(qos: .utility).async {
             try? WatchListManager.manager.saveWatchList(watchlistData: raffle)
         }
+        raffleDetailObject.faveRaffle.setImage(UIImage(systemName: "heart.fill"), for: .normal)
     }
     
     @objc func cancel() {

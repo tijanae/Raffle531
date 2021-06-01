@@ -18,6 +18,7 @@ class participantTVC: UITableViewCell {
     
     lazy var nameLabel: UILabel = {
        let label = UILabel()
+        label.font = UIFont(name: "GillSans-UltraBold", size: 15)
         label.textColor = .black
         return label
     }()
@@ -30,6 +31,7 @@ class participantTVC: UITableViewCell {
     
     lazy var idLabel: UILabel = {
        let label = UILabel()
+        label.font = UIFont(name: "GillSans-UltraBold", size: 15)
         label.textColor = .black
         return label
     }()
@@ -42,6 +44,7 @@ class participantTVC: UITableViewCell {
     
     lazy var emailLabel: UILabel = {
        let label = UILabel()
+        label.font = UIFont(name: "GillSans-UltraBold", size: 15)
         label.textColor = .black
         return label
     }()
@@ -54,6 +57,7 @@ class participantTVC: UITableViewCell {
     
     lazy var phoneLabel: UILabel = {
        let label = UILabel()
+        label.font = UIFont(name: "GillSans-UltraBold", size: 15)
         label.textColor = .black
         return label
     }()
@@ -79,8 +83,8 @@ class participantTVC: UITableViewCell {
         idLabelConstraint()
         emailImageConstraint()
         emailLabelConstraint()
-        phoneImageConstraint()
-        phoneLabelConstraint()
+        //phoneImageConstraint()
+        //phoneLabelConstraint()
     }
     
     private func userImageConstraint() {
@@ -90,8 +94,8 @@ class participantTVC: UITableViewCell {
         userImage.translatesAutoresizingMaskIntoConstraints = false
         
         [userImage.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-         userImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
-         userImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         //userImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
+         userImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
          userImage.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 50)
         ].forEach {$0.isActive = true}
     }
@@ -103,7 +107,7 @@ class participantTVC: UITableViewCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         [nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-         nameLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 50),
+         //nameLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 50),
          nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
          nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
@@ -115,9 +119,9 @@ class participantTVC: UITableViewCell {
         
         idImage.translatesAutoresizingMaskIntoConstraints = false
         
-        [idImage.topAnchor.constraint(equalTo: topAnchor, constant: 80),
-         idImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 105),
-         idImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+        [idImage.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+         //idImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 105),
+         idImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
          idImage.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 50)
         ].forEach {$0.isActive = true}
     }
@@ -128,9 +132,9 @@ class participantTVC: UITableViewCell {
         
         idLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [idLabel.topAnchor.constraint(equalTo: topAnchor, constant: 75),
-         idLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 100),
-         idLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 55),
+        [idLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+         //idLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 100),
+         idLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
          idLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
     }
@@ -141,9 +145,9 @@ class participantTVC: UITableViewCell {
         
         emailImage.translatesAutoresizingMaskIntoConstraints = false
         
-        [emailImage.topAnchor.constraint(equalTo: topAnchor, constant: 110),
-         emailImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 135),
-         emailImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+        [emailImage.topAnchor.constraint(equalTo: topAnchor, constant: 90),
+         //emailImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 135),
+         emailImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
          emailImage.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 50)
         ].forEach {$0.isActive = true}
     }
@@ -154,13 +158,13 @@ class participantTVC: UITableViewCell {
         
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        [emailLabel.topAnchor.constraint(equalTo: topAnchor, constant: 110),
-         emailLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 135),
-         emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 55),
+        [emailLabel.topAnchor.constraint(equalTo: topAnchor, constant: 90),
+         //emailLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 135),
+         emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 75),
          emailLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
     }
-    
+    /*
     private func phoneImageConstraint() {
         
         contentView.addSubview(phoneImage)
@@ -169,7 +173,7 @@ class participantTVC: UITableViewCell {
         
         [phoneImage.topAnchor.constraint(equalTo: topAnchor, constant: 140),
          phoneImage.bottomAnchor.constraint(equalTo: topAnchor, constant: 165),
-         phoneImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         phoneImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
          phoneImage.trailingAnchor.constraint(equalTo: leadingAnchor, constant: 50)
         ].forEach {$0.isActive = true}
     }
@@ -186,7 +190,7 @@ class participantTVC: UITableViewCell {
          phoneLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
     }
-    
+    */
     
     
 

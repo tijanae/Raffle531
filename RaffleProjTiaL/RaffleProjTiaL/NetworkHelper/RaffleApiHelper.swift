@@ -98,7 +98,7 @@ struct raffleApiHelper {
         })
     }
     
-    func getWinner(object: String, completionHandler: @escaping (Result<[Winner], AppError>) -> () ) {
+    func getWinner(object: String, completionHandler: @escaping (Result<Winner, AppError>) -> () ) {
         
         var winnerURL: URL {
             guard let url = URL(string: "https://raffle-fs-app.herokuapp.com/api/raffles/\(object)/winner") else { fatalError("Error: Invalid URL")}
@@ -113,7 +113,7 @@ struct raffleApiHelper {
                 return
             case .success(let data):
                 do{
-                    let winnerData = try JSONDecoder().decode([Winner].self, from: data)
+                    let winnerData = try JSONDecoder().decode(Winner.self, from: data)
                     completionHandler(.success(winnerData))
                 } catch {
                     completionHandler(.failure(.couldNotParseJSON(rawError: error)))

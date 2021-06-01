@@ -15,6 +15,8 @@ class RaffleDetailView: UIView {
         let label = UILabel()
         label.text = "Win A PONY"
         label.font = UIFont(name: "GillSans-UltraBold", size: 30)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         label.textColor = .black
         return label
     }()
@@ -82,7 +84,8 @@ class RaffleDetailView: UIView {
         
         [raffleName.topAnchor.constraint(equalTo: topAnchor, constant: 50),
          raffleName.bottomAnchor.constraint(equalTo: topAnchor, constant: 150),
-         raffleName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45)].forEach {$0.isActive = true}
+         raffleName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 45),
+         raffleName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
     
     private func cancelRaffleConstraint() {

@@ -17,7 +17,7 @@ class WatchTVC: UITableViewCell {
     
     lazy var raffleStatus: UIImageView = {
         let img = UIImageView()
-        img.image = UIImage(named: "closed")
+        img.image = UIImage(named: "calendar")
         return img
     }()
     
@@ -25,6 +25,13 @@ class WatchTVC: UITableViewCell {
        let label = UILabel()
 
         return label
+    }()
+    
+    lazy var deleteRaffle: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "trash"), for: .normal)
+        button.tintColor = .black
+        return button
     }()
     
     override func awakeFromNib() {
@@ -42,6 +49,7 @@ class WatchTVC: UITableViewCell {
         raffleTitleConstraint()
         raffleStatusConstraint()
         raffleStatusLabelConstraint()
+        deleteConstraint()
     }
 
     private func raffleTitleConstraint() {
@@ -53,6 +61,18 @@ class WatchTVC: UITableViewCell {
         [raffleTitle.topAnchor.constraint(equalTo: topAnchor, constant: 10),
          //raffleTitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25),
          raffleTitle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         raffleTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
+    }
+    
+    private func deleteConstraint() {
+        
+        contentView.addSubview(deleteRaffle)
+        
+        deleteRaffle.translatesAutoresizingMaskIntoConstraints = false
+        
+        [deleteRaffle.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+         //deleteRaffle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25),
+         deleteRaffle.leadingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
          raffleTitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)].forEach {$0.isActive = true}
     }
     

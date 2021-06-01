@@ -20,7 +20,7 @@ class ParticipantView: UIView {
     
     lazy var participantLabel: UILabel = {
         let label = UILabel()
-        label.text = "Be the first to register"
+        label.text = "Register to WIN!"
         label.font = UIFont(name: "GillSans-UltraBold", size: 20)
         label.textColor = .black
         return label
@@ -49,7 +49,7 @@ class ParticipantView: UIView {
         
         [participantLabel.topAnchor.constraint(equalTo: topAnchor, constant: 50 ),
          participantLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 75),
-         participantLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+         participantLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
          //participantLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         ].forEach {$0.isActive = true}
     }
@@ -65,7 +65,7 @@ class ParticipantView: UIView {
         //         participantTV.trailingAnchor.constraint(equalTo: trailingAnchor)].forEach{$0.isActive = true}
         
         NSLayoutConstraint.activate(
-            [participantTV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 200),
+            [participantTV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 100),
              participantTV.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
              participantTV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
              participantTV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)])

@@ -22,10 +22,26 @@ class NewRaffleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        view.backgroundColor = .darkGray
-
+        view.backgroundColor = .lightGray
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadView()
+        setGradientBackground(colorBottom: UIColor(red: 8/255, green: 92/255, blue: 0/255, alpha: 1), colorTop: .white)
+    }
+    
+    private func setGradientBackground(colorBottom: UIColor, colorTop: UIColor){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.5)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [NSNumber(floatLiteral: 0.0), NSNumber(floatLiteral: 1.0)]
+        gradientLayer.frame = view.bounds
+       self.view.layer.insertSublayer(gradientLayer, at: 0)
+      }
+    
+    
     
     private func setUp() {
         newRaffleView.cancelRaffle.addTarget(self, action: #selector(cancel), for: .touchUpInside)

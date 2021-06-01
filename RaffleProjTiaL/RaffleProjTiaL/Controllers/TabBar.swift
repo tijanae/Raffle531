@@ -22,7 +22,7 @@ class TabBar: UITabBarController{
         secondvc.tabBarItem = UITabBarItem(title: "Watch List", image: UIImage(systemName: "heart.fill"), tag: 1)
         thirdvc.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         
-        viewControllers = [firstvc, secondvc, thirdvc]
+        viewControllers = [firstvc, secondvc]
         viewControllers?.forEach({$0.tabBarController?.tabBar.barStyle = .default})
     }
 
