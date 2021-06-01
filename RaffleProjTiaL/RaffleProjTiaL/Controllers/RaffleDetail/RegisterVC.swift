@@ -34,7 +34,8 @@ class RegisterVC: UIViewController {
         guard let newParticipant = createParticipantFromFields() else { displayInvalidProjectAlert()
             return
         }
-        
+        //print(raffleDetails.)
+        /*
         raffleApiHelper.manager.postParticipants(object: String(raffleDetails.id), newParticipant) { [weak self] result in
             switch result {
             case .failure:
@@ -43,6 +44,7 @@ class RegisterVC: UIViewController {
                 print("hello new participant")
             }
         }
+ */
         
         print("YAY youre registered")
         //dismiss(animated: true, completion: nil)

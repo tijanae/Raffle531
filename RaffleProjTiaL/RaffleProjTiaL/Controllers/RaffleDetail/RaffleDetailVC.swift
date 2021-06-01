@@ -96,6 +96,7 @@ class RaffleDetailVC: UIViewController {
         default:
             let register = RegisterVC()
             childVC = register
+            register.raffleDetails = raffleDetails
             viewDidLoad()
         }
     }
