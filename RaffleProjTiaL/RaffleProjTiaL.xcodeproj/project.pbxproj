@@ -32,6 +32,7 @@
 		4E3EE68526644F66003E9C99 /* RaffleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE68426644F66003E9C99 /* RaffleModel.swift */; };
 		4E3EE68D266451E2003E9C99 /* RaffleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */; };
 		4E74EC9D2665A242001FABD0 /* WatchListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74EC9C2665A242001FABD0 /* WatchListTVC.swift */; };
+		4E74ECA52665B221001FABD0 /* DisplayWinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74ECA42665B221001FABD0 /* DisplayWinnerView.swift */; };
 		4EC13C6926653ACA0068D24C /* WinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C6826653ACA0068D24C /* WinnerModel.swift */; };
 		4EC13C7126653CE70068D24C /* WinnerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C7026653CE70068D24C /* WinnerWrapper.swift */; };
 		4EC13C8526656F590068D24C /* noParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C8426656F590068D24C /* noParticipantsView.swift */; };
@@ -94,6 +95,7 @@
 		4E3EE68426644F66003E9C99 /* RaffleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleModel.swift; sourceTree = "<group>"; };
 		4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleWrapper.swift; sourceTree = "<group>"; };
 		4E74EC9C2665A242001FABD0 /* WatchListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTVC.swift; sourceTree = "<group>"; };
+		4E74ECA42665B221001FABD0 /* DisplayWinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWinnerView.swift; sourceTree = "<group>"; };
 		4EC13C6826653ACA0068D24C /* WinnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerModel.swift; sourceTree = "<group>"; };
 		4EC13C7026653CE70068D24C /* WinnerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerWrapper.swift; sourceTree = "<group>"; };
 		4EC13C8426656F590068D24C /* noParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noParticipantsView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				4EC13C8426656F590068D24C /* noParticipantsView.swift */,
 				4E3EE6052663DB21003E9C99 /* participantTVC.swift */,
 				4E3EE6202663F511003E9C99 /* WinnerView.swift */,
+				4E74ECA42665B221001FABD0 /* DisplayWinnerView.swift */,
 				4E3EE6252663F6FD003E9C99 /* WinnerVC.swift */,
 			);
 			path = RaffleDetail;
@@ -444,6 +447,7 @@
 				4E3EE6212663F511003E9C99 /* WinnerView.swift in Sources */,
 				4E3EE5CD266329C0003E9C99 /* RaffleDetailVC.swift in Sources */,
 				4E3EE5B32662A396003E9C99 /* NetworkHelper.swift in Sources */,
+				4E74ECA52665B221001FABD0 /* DisplayWinnerView.swift in Sources */,
 				4E3EE6332663F932003E9C99 /* WatchListView.swift in Sources */,
 				4E74EC9D2665A242001FABD0 /* WatchListTVC.swift in Sources */,
 				4E3EE5E426633036003E9C99 /* NewRaffleView.swift in Sources */,

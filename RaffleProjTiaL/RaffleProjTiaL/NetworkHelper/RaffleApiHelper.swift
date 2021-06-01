@@ -108,6 +108,7 @@ struct raffleApiHelper {
         NetworkHelper.manager.performDataTask(withUrl: winnerURL, andMethod: .get) { (result) in
             switch result {
             case .failure(let error):
+                print("I failed Here in get win")
                 completionHandler(.failure(error))
                 return
             case .success(let data):

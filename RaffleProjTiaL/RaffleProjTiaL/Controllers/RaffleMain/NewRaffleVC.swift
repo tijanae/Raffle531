@@ -50,7 +50,7 @@ class NewRaffleVC: UIViewController {
                 
             }
         }
-        //dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func viewPassword() {

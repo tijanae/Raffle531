@@ -10,12 +10,15 @@ import UIKit
 class WinnerVC: UIViewController {
     
     private let winnerView = WinnerView()
+    private let displayWinnerView = DisplayWinnerView()
     
     //MARK: Data
     var raffleDetails: AllRaffles!
     var winner = [Winner]()
     
     override func loadView() {
+        loadData()
+        guard raffleDetails.dateRaffled != "This Raffle has not closed yet." else {return view = displayWinnerView}
         view = winnerView
     }
 
@@ -36,8 +39,10 @@ class WinnerVC: UIViewController {
                 print(error)
             case .success(let data):
                 print("we've got a winner! \(data)")
+                self.winner = data
             }
         }
+        print(winner)
     }
     
     private func setUp() {
