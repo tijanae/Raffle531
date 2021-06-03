@@ -26,6 +26,14 @@ class RaffleView: UIView {
         return button
     }()
     
+    lazy var searchRaffle: UIButton = {
+        let search = UIButton()
+        //search.barTintColor = .lightGray
+        search.layer.borderWidth = 2
+        search.layer.borderColor = CGColor(red: 0, green: 0, blue: 1, alpha: 1)
+        return search
+    }()
+    
     lazy var filterSegment: UISegmentedControl = {
         let button = UISegmentedControl(items: ["Newer","Older"])
         let xPostion:CGFloat = 10
@@ -63,6 +71,7 @@ class RaffleView: UIView {
     
     private func addConstraints() {
         appLabelConstraint()
+        searchConstraint()
         createRaffleConstraint()
         raffleCollectionConstraint()
     }
@@ -78,6 +87,18 @@ class RaffleView: UIView {
          appLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)
         ].forEach {$0.isActive = true}
     }
+    
+    private func searchConstraint() {
+        
+        addSubview(searchRaffle)
+        
+        searchRaffle.translatesAutoresizingMaskIntoConstraints = false
+        
+        [searchRaffle.topAnchor.constraint(equalTo: topAnchor, constant: 90 ),
+         searchRaffle.bottomAnchor.constraint(equalTo: topAnchor, constant: 110),
+         searchRaffle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)].forEach {$0.isActive = true}
+    }
+    
     
     private func createRaffleConstraint() {
         addSubview(createRaffle)
