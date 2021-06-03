@@ -26,17 +26,21 @@ class RaffleView: UIView {
         return button
     }()
     
-    lazy var searchRaffle: UIButton = {
-        let search = UIButton()
-        //search.barTintColor = .lightGray
+    lazy var searchRaffle: UISearchBar = {
+        let search = UISearchBar()
+        search.placeholder = "Search Raffle"
+        search.barStyle = .default
+        search.isHidden = false
+        //search.isTranslucent = false
+        search.tintColor = .black
         search.layer.borderWidth = 2
-        search.layer.borderColor = CGColor(red: 0, green: 0, blue: 1, alpha: 1)
+        search.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         return search
     }()
     
     lazy var filterSegment: UISegmentedControl = {
         let button = UISegmentedControl(items: ["Newer","Older"])
-        let xPostion:CGFloat = 10
+        let xPostion:CGFloat = 25
         let yPostion:CGFloat = 150
         let elementWidth:CGFloat = 300
         let elementHeight:CGFloat = 30
@@ -94,9 +98,10 @@ class RaffleView: UIView {
         
         searchRaffle.translatesAutoresizingMaskIntoConstraints = false
         
-        [searchRaffle.topAnchor.constraint(equalTo: topAnchor, constant: 90 ),
-         searchRaffle.bottomAnchor.constraint(equalTo: topAnchor, constant: 110),
-         searchRaffle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25)].forEach {$0.isActive = true}
+        [searchRaffle.topAnchor.constraint(equalTo: topAnchor, constant: 110 ),
+         searchRaffle.bottomAnchor.constraint(equalTo: topAnchor, constant: 140),
+         searchRaffle.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+         searchRaffle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25)].forEach {$0.isActive = true}
     }
     
     
@@ -128,3 +133,5 @@ class RaffleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+

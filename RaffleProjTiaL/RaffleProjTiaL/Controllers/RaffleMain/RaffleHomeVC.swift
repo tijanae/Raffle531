@@ -16,19 +16,36 @@ class RaffleHomeVC: UIViewController {
         }
     }
     
+    private var raffleSearchString: String? = nil {
+        didSet{
+            raffleView.raffleCollection.reloadData()
+        }
+    }
+    
+    private var userSearchRequest: [AllRaffles] {
+        guard let searchedString = raffleSearchString else {
+            return raffleData
+        }
+        guard searchedString != "" else {
+            return raffleData
+        }
+        return raffleData
+    }
+    
     private let raffleView = RaffleView()
     
     override func loadView() {
-        loadData()
+        //loadData()
         view = raffleView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        //loadData()
         setUp()
         raffleView.raffleCollection.dataSource = self
         raffleView.raffleCollection.delegate = self
+        raffleView.searchRaffle.delegate = self
         //view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
@@ -69,10 +86,12 @@ class RaffleHomeVC: UIViewController {
         raffleView.filterSegment.addTarget(self, action: #selector(filter), for: .valueChanged)
     }
     
+    
     private func sortRaffle() {
-        raffleData = raffleData.sorted{$0.created_at < $1.created_at}
-        raffleView.raffleCollection.reloadData()
+        
+        //userSearchRequest = raffleData.filter({ $0.contains(raffleSearchString) })
     }
+
  
     
     @objc func createRaffle() {
@@ -99,13 +118,13 @@ class RaffleHomeVC: UIViewController {
 extension RaffleHomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return raffleData.count
+        return userSearchRequest.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let raffleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RaffleCVC", for: indexPath) as? RaffleCVC else{return UICollectionViewCell()}
-        let data = raffleData[indexPath.row]
+        let data = userSearchRequest[indexPath.row]
         
         raffleCell.raffleTitle.text = data.name
         raffleCell.createdImage.image = UIImage(named: "calendar")
@@ -130,16 +149,20 @@ extension RaffleHomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailedVC = RaffleDetailVC()
-        let selectedRaffle = raffleData[indexPath.row]
+        let selectedRaffle = userSearchRequest[indexPath.row]
         
         detailedVC.raffleDetails = selectedRaffle
         
         detailedVC.modalPresentationStyle = .fullScreen
         present(detailedVC, animated: true, completion: nil)
     }
-
-    
-    
+ 
 }
 
-
+extension RaffleHomeVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        raffleSearchString = searchBar.text
+        loadData()
+    }
+}
