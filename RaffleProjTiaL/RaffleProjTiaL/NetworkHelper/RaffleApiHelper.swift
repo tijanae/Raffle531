@@ -11,7 +11,7 @@ struct raffleApiHelper {
     
     static let manager = raffleApiHelper()
     
-    func getRaffleData(completionHandler: @escaping (Result<[AllRaffles], AppError>) -> () ) {
+    func getRaffleData(completionHandler: @escaping (Result<[Raffle], AppError>) -> () ) {
         
         NetworkHelper.manager.performDataTask(withUrl: raffleURL, andMethod: .get) { (result) in
             switch result {
@@ -20,7 +20,7 @@ struct raffleApiHelper {
                 return
             case .success(let data):
                 do {
-                    let raffleData = try JSONDecoder().decode([AllRaffles].self, from: data)
+                    let raffleData = try JSONDecoder().decode([Raffle].self, from: data)
                     completionHandler(.success(raffleData))
                 } catch {
                     completionHandler(.failure(.couldNotParseJSON(rawError: error)))
@@ -29,7 +29,7 @@ struct raffleApiHelper {
         }
     }
     
-    func postRaffle(_ raffle: Raffle, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
+    func postRaffle(_ raffle: RaffleInfo, completionHandler: @escaping (Result<Data, AppError>) -> Void) {
         
         guard let encodedRaffleWrapper = try? JSONEncoder().encode(raffle) else {
             fatalError("Unable to json encode project")

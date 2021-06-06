@@ -13,7 +13,7 @@ class WinnerVC: UIViewController {
     private let displayWinnerView = DisplayWinnerView()
     
     //MARK: Data
-    var raffleDetails: AllRaffles!
+    var raffleDetails: Raffle!
     var winner = [Winner]()
     
     override func loadView() {
@@ -54,7 +54,7 @@ class WinnerVC: UIViewController {
     @objc func submit() {
         guard let token = createTokenFromTF() else {fatalError("error choosing winner")  }
         
-        raffleApiHelper.manager.setWinner(object: String(raffleDetails.id), token) { [weak self] result in
+        raffleApiHelper.manager.setWinner(object: String(raffleDetails.id), token) { result in
             switch result {
             case .failure:
                 print("error getting winner")

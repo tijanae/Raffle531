@@ -9,7 +9,7 @@ import UIKit
 
 class RaffleDetailVC: UIViewController {
     
-    var raffleDetails: AllRaffles!
+    private var raffle: Raffle
     var raffleDetailObject = RaffleDetailView()
     
     var childVC = UIViewController()
@@ -21,6 +21,18 @@ class RaffleDetailVC: UIViewController {
     private let participantChild = ParticipantVC()
     private let winnerChild = WinnerVC()
     */
+    
+    init(raffle: Raffle) {
+        self.raffle = raffle
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = raffleDetailObject
@@ -59,7 +71,7 @@ class RaffleDetailVC: UIViewController {
     }
     
     private func loadData() {
-        raffleDetailObject.raffleName.text = raffleDetails.name
+        raffleDetailObject.raffleName.text = raffle.name
     }
     
     private func setUp() {
@@ -71,9 +83,9 @@ class RaffleDetailVC: UIViewController {
     // MARK: OBJC
     
     @objc func save() {
-        let raffle = WatchListPersisted(id: raffleDetails.id, name: raffleDetails.name, created_at: raffleDetails.created_at)
+        let savedRaffle = Raffle(id: raffle.id, name: raffle.name, created_at: raffle.created_at, raffled_at: raffle.created_at)
         DispatchQueue.global(qos: .utility).async {
-            try? WatchListManager.manager.saveWatchList(watchlistData: raffle)
+            try? WatchListManager.manager.saveWatchList(watchlistData: savedRaffle)
         }
         raffleDetailObject.faveRaffle.setImage(UIImage(systemName: "heart.fill"), for: .normal)
     }
@@ -88,19 +100,19 @@ class RaffleDetailVC: UIViewController {
         case 1:
             let viewParticipants = ParticipantVC()
             childVC = viewParticipants
-            viewParticipants.raffleDetails = raffleDetails
+            viewParticipants.raffleDetails = raffle
             viewDidLoad()
 
         case 2:
             let winnerView = WinnerVC()
             childVC = winnerView
-            winnerView.raffleDetails = raffleDetails
+            winnerView.raffleDetails = raffle
             viewDidLoad()
             
         default:
             let register = RegisterVC()
             childVC = register
-            register.raffleDetails = raffleDetails
+            register.raffleDetails = raffle
             viewDidLoad()
         }
     }

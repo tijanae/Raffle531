@@ -13,17 +13,17 @@ struct WatchListManager {
     
     static let manager = WatchListManager()
     
-    private let persistenceHelper = PersistenceHelper<WatchListPersisted>(fileName: "playlistPersisted.plist")
+    private let persistenceHelper = PersistenceHelper<Raffle>(fileName: "playlistPersisted.plist")
     
-    func saveWatchList(watchlistData: WatchListPersisted) throws {
+    func saveWatchList(watchlistData: Raffle) throws {
         try persistenceHelper.save(newElement: watchlistData)
     }
     
-    func getWatchList() throws -> [WatchListPersisted] {
+    func getWatchList() throws -> [Raffle] {
         return try persistenceHelper.getObjects()
     }
     
-    func deleteWatchList(watchList: [WatchListPersisted], atIndex: Int) throws {
+    func deleteWatchList(watchList: [Raffle], atIndex: Int) throws {
         try persistenceHelper.delete(elements: watchList, index: atIndex)
     }
 }

@@ -10,8 +10,9 @@ import UIKit
 class RaffleHomeVC: UIViewController {
     
     // MARK: Data
-    var raffleData = [AllRaffles]() {
+    var raffleData = [Raffle]() {
         didSet {
+            raffleView.appLabel.text = "Raffle (\(raffleData.count))"
             raffleView.raffleCollection.reloadData()
         }
     }
@@ -53,12 +54,13 @@ class RaffleHomeVC: UIViewController {
       }
     
     private func loadData() {
-        raffleApiHelper.manager.getRaffleData { (result) in
+        raffleApiHelper.manager.getRaffleData {[weak self] (result) in
             switch result {
             case .failure(let error):
-                print(error)
+                self?.showAlert(title: "Data Didnt load", message: error.localizedDescription)
             case .success(let data):
-                self.raffleData = data
+                self?.raffleData = data
+                //self?.raffleData = data.filter{($0.raffled_at != nil)}
                 
             }
         }
@@ -129,10 +131,10 @@ extension RaffleHomeVC: UICollectionViewDataSource, UICollectionViewDelegateFlow
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailedVC = RaffleDetailVC()
-        let selectedRaffle = raffleData[indexPath.row]
         
-        detailedVC.raffleDetails = selectedRaffle
+        
+        let selectedRaffle = raffleData[indexPath.row]
+        let detailedVC = RaffleDetailVC(raffle: selectedRaffle)
         
         detailedVC.modalPresentationStyle = .fullScreen
         present(detailedVC, animated: true, completion: nil)

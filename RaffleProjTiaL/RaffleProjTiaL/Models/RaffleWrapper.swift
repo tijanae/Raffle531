@@ -8,6 +8,6 @@
 import Foundation
 
 struct RaffleWrapper: Codable {
-    let raffle: Raffle
+    let raffle: RaffleInfo
     
 }

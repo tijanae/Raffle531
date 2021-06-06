@@ -11,16 +11,16 @@ enum RaffleError: Error {
     case decodingError(Error)
 }
 
-struct AllRaffles: Codable {
+struct Raffle: Codable {
     let id: Int
     let name: String
     let created_at: String
     let raffled_at: String?
     //let winner_id: Int?
     
-    static func getAllRaffles(from data: Data) throws -> [AllRaffles] {
+    static func getAllRaffles(from data: Data) throws -> [Raffle] {
         do {
-            let raffle = try JSONDecoder().decode([AllRaffles].self, from: data)
+            let raffle = try JSONDecoder().decode([Raffle].self, from: data)
             return raffle
         } catch{
             fatalError("couldnt decode model in all raffle model")

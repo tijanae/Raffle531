@@ -13,7 +13,7 @@ class WatchListVC: UIViewController {
     private let noWatchView = noSavedWatchListView()
     //MARK: Data
     
-    var savedRaffles = [WatchListPersisted]() {
+    var savedRaffles = [Raffle]() {
         didSet {
             watchView.watchTV.reloadData()
         }
@@ -62,6 +62,7 @@ class WatchListVC: UIViewController {
     @objc func deleteRaffle(sender: UIButton){
         try? WatchListManager.manager.deleteWatchList(watchList: self.savedRaffles, atIndex: sender.tag)
         viewWillAppear(true)
+        //TODO: refactor with alex
     }
     
     
@@ -88,15 +89,17 @@ extension WatchListVC: UITableViewDelegate, UITableViewDataSource {
         return 150
     }
     
-    /*
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailedVC = RaffleDetailVC()
+
         let selectedRaffle = savedRaffles[indexPath.row]
-        
-        detailedVC.raffleDetails.id = selectedRaffle.id
-        //detailedVC.raffleDetails = selectedRaffle
+        let detailedVC = RaffleDetailVC(raffle: selectedRaffle)
+        detailedVC.modalPresentationStyle = .fullScreen
+        present(detailedVC, animated: true, completion: nil)
+        //navigationController?.pushViewController(detailedVC, animated: true)
+
     }
- */
+ 
  
     
     

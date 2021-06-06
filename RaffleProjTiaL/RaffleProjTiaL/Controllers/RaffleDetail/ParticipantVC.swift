@@ -18,7 +18,7 @@ class ParticipantVC: UIViewController {
             participantView.participantTV.reloadData()
         }
     }
-    var raffleDetails: AllRaffles!
+    var raffleDetails: Raffle!
 
     
     override func loadView() {

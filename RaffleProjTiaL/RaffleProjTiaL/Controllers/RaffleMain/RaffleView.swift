@@ -19,6 +19,8 @@ class RaffleView: UIView {
         return label
     }()
     
+    //let object = RaffleTextField(placeholder: "")
+    
     lazy var createRaffle: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus"), for: .normal)

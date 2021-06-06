@@ -33,6 +33,7 @@
 		4E3EE68D266451E2003E9C99 /* RaffleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */; };
 		4E74EC9D2665A242001FABD0 /* WatchListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74EC9C2665A242001FABD0 /* WatchListTVC.swift */; };
 		4E74ECA52665B221001FABD0 /* DisplayWinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E74ECA42665B221001FABD0 /* DisplayWinnerView.swift */; };
+		4E98F3D0266BE12400203CAB /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E98F3CF266BE12400203CAB /* UIViewController+Alerts.swift */; };
 		4EC13C6926653ACA0068D24C /* WinnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C6826653ACA0068D24C /* WinnerModel.swift */; };
 		4EC13C7126653CE70068D24C /* WinnerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C7026653CE70068D24C /* WinnerWrapper.swift */; };
 		4EC13C8526656F590068D24C /* noParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC13C8426656F590068D24C /* noParticipantsView.swift */; };
@@ -96,6 +97,7 @@
 		4E3EE68C266451E2003E9C99 /* RaffleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaffleWrapper.swift; sourceTree = "<group>"; };
 		4E74EC9C2665A242001FABD0 /* WatchListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTVC.swift; sourceTree = "<group>"; };
 		4E74ECA42665B221001FABD0 /* DisplayWinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWinnerView.swift; sourceTree = "<group>"; };
+		4E98F3CF266BE12400203CAB /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		4EC13C6826653ACA0068D24C /* WinnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerModel.swift; sourceTree = "<group>"; };
 		4EC13C7026653CE70068D24C /* WinnerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerWrapper.swift; sourceTree = "<group>"; };
 		4EC13C8426656F590068D24C /* noParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noParticipantsView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				4E3EE5DE26632F85003E9C99 /* RaffleTextField.swift */,
+				4E98F3CF266BE12400203CAB /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				4E3EE5E426633036003E9C99 /* NewRaffleView.swift in Sources */,
 				4E3EE66B2664332F003E9C99 /* RaffleApiHelper.swift in Sources */,
 				4E3EE5DA26632E55003E9C99 /* NewRaffleVC.swift in Sources */,
+				4E98F3D0266BE12400203CAB /* UIViewController+Alerts.swift in Sources */,
 				4EC13C7126653CE70068D24C /* WinnerWrapper.swift in Sources */,
 				4E3EE68526644F66003E9C99 /* RaffleModel.swift in Sources */,
 				4EF8AAB4266283070068FFCC /* RaffleHomeVC.swift in Sources */,
@@ -638,6 +642,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DMYKB6TH2U;
 				INFOPLIST_FILE = RaffleProjTiaL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,6 +661,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DMYKB6TH2U;
 				INFOPLIST_FILE = RaffleProjTiaL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

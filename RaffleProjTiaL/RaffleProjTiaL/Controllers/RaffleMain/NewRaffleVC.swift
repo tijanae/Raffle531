@@ -57,7 +57,7 @@ class NewRaffleVC: UIViewController {
         guard let newRaffle = createProjectFromFields() else {displayInvalidProjectAlert()
             return
         }
-        raffleApiHelper.manager.postRaffle(newRaffle) { [weak self] result in
+        raffleApiHelper.manager.postRaffle(newRaffle) {result in
             switch result {
             case .success:
                 print("yay it worked")
@@ -80,12 +80,12 @@ class NewRaffleVC: UIViewController {
     
     }
     
-    private func createProjectFromFields() -> Raffle? {
+    private func createProjectFromFields() -> RaffleInfo? {
         guard let raffleName = newRaffleView.RaffleNameTF.text else {
                 return nil
         }
         guard let secretToken = newRaffleView.secrectTokenTF.text else{fatalError("Must enter token")}
-        return Raffle(name: raffleName, secret_token: secretToken)
+        return RaffleInfo(name: raffleName, secret_token: secretToken)
     }
     
     private func displayPostFailureAlert(with error: Error) {

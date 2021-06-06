@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Raffle: Codable {
+struct RaffleInfo: Codable {
     let name: String
     let secret_token: String
 }

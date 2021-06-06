@@ -11,7 +11,7 @@ class RegisterVC: UIViewController {
     
     private let registerView = RegisterView()
     
-    var raffleDetails: AllRaffles!
+    var raffleDetails: Raffle!
     
     override func loadView() {
         view = registerView
@@ -39,12 +39,13 @@ class RegisterVC: UIViewController {
         }
         //print(raffleDetails.)
         
-        raffleApiHelper.manager.postParticipants(object: String(raffleDetails.id), newParticipant) { [weak self] result in
+        raffleApiHelper.manager.postParticipants(object: String(raffleDetails.id), newParticipant) {[weak self] result in
             switch result {
             case .failure:
                 print("error registering participant ")
             case .success:
-                print("hello new participant")
+                //print("hello new participant")
+                self?.showAlert(title: "Added Participant", message: "ok")
             }
         }
         

@@ -20,7 +20,7 @@ class RaffleTextField: UITextField {
     
     convenience init(placeholder: String) {
         self.init(frame: .zero)
-//        self.placeholder = placeholder
+        self.placeholder = placeholder
         self.text = placeholder
         configure()
     }
